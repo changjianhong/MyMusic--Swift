@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHListController" customModule="MyMusic" customModuleProvider="target">
+            <connections>
+                <outlet property="currentLyric" destination="33n-Kx-o1i" id="RnI-bg-96N"/>
+                <outlet property="leftContraint" destination="bYG-gE-k02" id="qiu-I1-UuK"/>
+                <outlet property="lyricView" destination="FWX-Gx-0Tq" id="K6f-Re-edx"/>
+                <outlet property="musicProgress" destination="1Or-Jj-9c9" id="357-qI-fty"/>
+                <outlet property="nativeSongListView" destination="0vx-nD-7XV" id="7Xc-Ha-Frh"/>
+                <outlet property="nextLyric" destination="zfs-5b-0gb" id="uH6-dZ-g7H"/>
+                <outlet property="tableView" destination="EP3-Us-ZCF" id="cvH-v1-gdt"/>
+                <outlet property="thirdLyric" destination="rlw-uJ-2ud" id="0Cc-4q-bza"/>
+                <outlet property="topContraint" destination="TLt-Mn-loB" id="3sr-b8-V5Q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Or-Jj-9c9">
+                    <rect key="frame" x="0.0" y="20" width="320" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="MA1-bi-Qrb"/>
+                    </constraints>
+                </progressView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EP3-Us-ZCF">
+                    <rect key="frame" x="0.0" y="22" width="320" height="546"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mMu-QJ-FpE"/>
+                        <outlet property="delegate" destination="-1" id="Ggu-wv-7K7"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWX-Gx-0Tq">
+                    <rect key="frame" x="220" y="163" width="90" height="225"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我有个恋爱想和你谈下" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlw-uJ-2ud">
+                            <rect key="frame" x="36" y="35" width="19" height="155.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="19" id="IX6-It-Guo"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我有个恋爱想和你谈下" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33n-Kx-o1i">
+                            <rect key="frame" x="0.0" y="23" width="28" height="179"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="28" id="4Bp-y5-LOb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.93651357319999995" green="0.30051303029999998" blue="0.2938938713" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我有个恋爱想和你谈下" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfs-5b-0gb">
+                            <rect key="frame" x="63" y="35" width="25" height="155.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="YuN-Go-K9Q"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="mhp-3X-fq5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rlw-uJ-2ud" firstAttribute="leading" secondItem="33n-Kx-o1i" secondAttribute="trailing" constant="8" id="33P-wl-NLh"/>
+                        <constraint firstAttribute="centerY" secondItem="rlw-uJ-2ud" secondAttribute="centerY" id="JwE-AM-ZXc"/>
+                        <constraint firstItem="zfs-5b-0gb" firstAttribute="leading" secondItem="rlw-uJ-2ud" secondAttribute="trailing" constant="8" id="Nh0-TO-mIF"/>
+                        <constraint firstAttribute="centerY" secondItem="33n-Kx-o1i" secondAttribute="centerY" id="R6S-Jo-s5u"/>
+                        <constraint firstAttribute="width" constant="90" id="RTd-xA-4qc"/>
+                        <constraint firstAttribute="centerY" secondItem="zfs-5b-0gb" secondAttribute="centerY" id="Wmr-UM-wYW"/>
+                        <constraint firstItem="33n-Kx-o1i" firstAttribute="leading" secondItem="FWX-Gx-0Tq" secondAttribute="leading" id="fEe-OR-xHL"/>
+                        <constraint firstAttribute="height" constant="225" id="twR-ac-Sid"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EP3-Us-ZCF" secondAttribute="trailing" id="BvI-B5-xP8"/>
+                <constraint firstItem="EP3-Us-ZCF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="D7g-FP-lSN"/>
+                <constraint firstItem="1Or-Jj-9c9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="G33-yk-Uzu"/>
+                <constraint firstAttribute="trailing" secondItem="1Or-Jj-9c9" secondAttribute="trailing" id="RCj-Bg-9pU"/>
+                <constraint firstItem="FWX-Gx-0Tq" firstAttribute="top" secondItem="1Or-Jj-9c9" secondAttribute="bottom" constant="141" id="TLt-Mn-loB"/>
+                <constraint firstAttribute="bottom" secondItem="EP3-Us-ZCF" secondAttribute="bottom" id="ZQq-7E-tq1"/>
+                <constraint firstItem="FWX-Gx-0Tq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="220" id="bYG-gE-k02"/>
+                <constraint firstItem="EP3-Us-ZCF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="sF5-30-dYp"/>
+                <constraint firstItem="1Or-Jj-9c9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vZm-B8-3XM"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="307" y="-137"/>
+        </view>
+        <view contentMode="scaleToFill" id="0vx-nD-7XV" customClass="JHNativeSongView" customModule="MyMusic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F29-Ku-mCQ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="0vx-nD-7XV" id="hCx-ln-qmG"/>
+                        <outlet property="delegate" destination="0vx-nD-7XV" id="aVp-e0-YL9"/>
+                    </connections>
+                </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqC-X0-jPw">
+                    <rect key="frame" x="125" y="273" width="70" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="1m1-7i-gVP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="F29-Ku-mCQ" secondAttribute="trailing" id="3BZ-Jn-0vG"/>
+                <constraint firstItem="F29-Ku-mCQ" firstAttribute="top" secondItem="0vx-nD-7XV" secondAttribute="top" id="BcS-rJ-TDf"/>
+                <constraint firstItem="F29-Ku-mCQ" firstAttribute="leading" secondItem="0vx-nD-7XV" secondAttribute="leading" id="JT0-b2-EGi"/>
+                <constraint firstAttribute="bottom" secondItem="F29-Ku-mCQ" secondAttribute="bottom" id="Uia-xb-Jpj"/>
+                <constraint firstAttribute="centerY" secondItem="KqC-X0-jPw" secondAttribute="centerY" id="Uq2-xQ-Z17"/>
+                <constraint firstAttribute="centerX" secondItem="KqC-X0-jPw" secondAttribute="centerX" id="eXI-pv-ia9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="noDataView" destination="KqC-X0-jPw" id="aJR-Zk-5wJ"/>
+                <outlet property="tableView" destination="F29-Ku-mCQ" id="CgA-LD-Zei"/>
+            </connections>
+            <point key="canvasLocation" x="669" y="-130"/>
+        </view>
+    </objects>
+</document>

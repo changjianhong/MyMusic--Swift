@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (1.3.1)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - Kingfisher (1.4.5)
+  - LiquidFloatingActionButton (0.1.0)
+  - MJExtension (2.5.9)
+  - pop (1.0.7)
+  - SnapKit (0.12.0)
+  - SwiftyJSON (2.2.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.3)
+  - FMDB
+  - Kingfisher (~> 1.4)
+  - LiquidFloatingActionButton
+  - MJExtension
+  - pop (~> 1.0)
+  - SnapKit (~> 0.12.0)
+  - SwiftyJSON (~> 2.2.1)
+
+SPEC CHECKSUMS:
+  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  Kingfisher: 22fa7d41c83b214c19fbb82a77a9db52300b3719
+  LiquidFloatingActionButton: 705328a08290b635f3aa2d516c4b1c8c07c1376a
+  MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  SnapKit: 00c388aa3bf1944c1b55472f31e841f75bd83882
+  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+
+COCOAPODS: 0.37.2

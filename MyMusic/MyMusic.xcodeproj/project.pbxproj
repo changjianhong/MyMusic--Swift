@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2728EA931B87156700456E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EA921B87156700456E5C /* AppDelegate.swift */; };
+		2728EA951B87156700456E5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2728EA941B87156700456E5C /* Images.xcassets */; };
+		2728EA981B87156700456E5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2728EA961B87156700456E5C /* LaunchScreen.xib */; };
+		2728EAA41B87156700456E5C /* MyMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EAA31B87156700456E5C /* MyMusicTests.swift */; };
+		2728EAB51B871F0000456E5C /* JHListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EAB31B871F0000456E5C /* JHListController.swift */; };
+		2728EAB61B871F0000456E5C /* JHListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2728EAB41B871F0000456E5C /* JHListController.xib */; };
+		2728EAB81B87211000456E5C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EAB71B87211000456E5C /* Song.swift */; };
+		2728EABA1B8722B600456E5C /* JHMacros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EAB91B8722B600456E5C /* JHMacros.swift */; };
+		2728EABC1B87329B00456E5C /* JHBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EABB1B87329B00456E5C /* JHBaseService.swift */; };
+		2764B87D1B89D66D009C328C /* SongLrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764B87C1B89D66D009C328C /* SongLrc.swift */; };
+		2764B87F1B89D9FA009C328C /* SongPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764B87E1B89D9FA009C328C /* SongPlay.swift */; };
+		2772F90A1B88C3FC000CA6A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772F9091B88C3FC000CA6A1 /* AVFoundation.framework */; };
+		277EDFE71B8B50030024D275 /* JHAppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDFE61B8B50030024D275 /* JHAppKey.swift */; };
+		277EDFEB1B8B5A880024D275 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFEA1B8B5A880024D275 /* Accounts.framework */; };
+		277EDFED1B8B5B030024D275 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFEC1B8B5B030024D275 /* Social.framework */; };
+		277EDFEF1B8B5B0D0024D275 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFEE1B8B5B0D0024D275 /* ImageIO.framework */; };
+		277EDFF11B8B5B1A0024D275 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFF01B8B5B1A0024D275 /* JavaScriptCore.framework */; };
+		277EDFF31B8B5B2F0024D275 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFF21B8B5B2F0024D275 /* libstdc++.dylib */; };
+		277EDFF51B8B5B3C0024D275 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFF41B8B5B3C0024D275 /* libz.dylib */; };
+		277EDFF71B8B5B4E0024D275 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFF61B8B5B4E0024D275 /* libicucore.dylib */; };
+		277EE0141B8B5B910024D275 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFFB1B8B5B910024D275 /* TencentOpenAPI.framework */; };
+		277EE0151B8B5B910024D275 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 277EDFFC1B8B5B910024D275 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		277EE0161B8B5B910024D275 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFFE1B8B5B910024D275 /* libWeiboSDK.a */; };
+		277EE0171B8B5B910024D275 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 277EE0061B8B5B910024D275 /* WeiboSDK.bundle */; };
+		277EE0181B8B5B910024D275 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EE00A1B8B5B910024D275 /* libWeChatSDK.a */; };
+		277EE0191B8B5B910024D275 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EE00D1B8B5B910024D275 /* MOBFoundation.framework */; };
+		277EE01A1B8B5B910024D275 /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 277EE00E1B8B5B910024D275 /* ShareSDK.bundle */; };
+		277EE01B1B8B5B910024D275 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EE00F1B8B5B910024D275 /* ShareSDK.framework */; };
+		277EE01C1B8B5B910024D275 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EE0101B8B5B910024D275 /* ShareSDKConnector.framework */; };
+		277EE01D1B8B5B910024D275 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EE0111B8B5B910024D275 /* ShareSDKExtension.framework */; };
+		277EE01E1B8B5B910024D275 /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 277EE0121B8B5B910024D275 /* ShareSDKUI.bundle */; };
+		277EE01F1B8B5B910024D275 /* ShareSDKUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EE0131B8B5B910024D275 /* ShareSDKUI.framework */; };
+		277EE0271B8B5DD50024D275 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EE0261B8B5DD50024D275 /* AppDelegateExtension.swift */; };
+		277EE02C1B8B608A0024D275 /* JHShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EE02B1B8B608A0024D275 /* JHShareHelper.swift */; };
+		2780ABC21B8FFE3A0085E678 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2780ABC11B8FFE3A0085E678 /* libsqlite3.0.dylib */; };
+		2780ABC71B8FFFED0085E678 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2780ABC61B8FFFED0085E678 /* YTKKeyValueStore.m */; };
+		2780ABCE1B9044B40085E678 /* JHNativeSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780ABCD1B9044B40085E678 /* JHNativeSongView.swift */; };
+		2783E3911B8816D500A7F5D2 /* JHMusciListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783E38F1B8816D500A7F5D2 /* JHMusciListCell.swift */; };
+		2783E3921B8816D500A7F5D2 /* JHMusciListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2783E3901B8816D500A7F5D2 /* JHMusciListCell.xib */; };
+		2783E3981B88773600A7F5D2 /* JHMusicPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783E3961B88773600A7F5D2 /* JHMusicPlayController.swift */; };
+		2783E3991B88773600A7F5D2 /* JHMusicPlayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2783E3971B88773600A7F5D2 /* JHMusicPlayController.xib */; };
+		278EE2ED1B9541FE00BC01BB /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278EE2EC1B9541FE00BC01BB /* SWTableViewCell.m */; };
+		27B25DC31B8EA6D1004F884F /* JHSongMP3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B25DC21B8EA6D1004F884F /* JHSongMP3Service.swift */; };
+		27C394361B92980C00DF42D1 /* JHNativeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C394341B92980C00DF42D1 /* JHNativeCell.swift */; };
+		27E0FEA51B8D5BA10036374D /* JHMusicLyricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E0FEA41B8D5BA10036374D /* JHMusicLyricHelper.swift */; };
+		27E0FEA91B8DCE350036374D /* JHImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E0FEA81B8DCE350036374D /* JHImageHelper.swift */; };
+		DD3CA6724CD18C6C5E7DE7E6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352C12147CBFFB854156F76B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2728EA9E1B87156700456E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2728EA851B87156700456E5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2728EA8C1B87156700456E5C;
+			remoteInfo = MyMusic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C70529A76ECF1AD19FBF321 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2728EA8D1B87156700456E5C /* MyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2728EA911B87156700456E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2728EA921B87156700456E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2728EA941B87156700456E5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		2728EA971B87156700456E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2728EA9D1B87156700456E5C /* MyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2728EAA21B87156700456E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2728EAA31B87156700456E5C /* MyMusicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicTests.swift; sourceTree = "<group>"; };
+		2728EAB31B871F0000456E5C /* JHListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHListController.swift; sourceTree = "<group>"; };
+		2728EAB41B871F0000456E5C /* JHListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHListController.xib; sourceTree = "<group>"; };
+		2728EAB71B87211000456E5C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		2728EAB91B8722B600456E5C /* JHMacros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMacros.swift; sourceTree = "<group>"; };
+		2728EABB1B87329B00456E5C /* JHBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHBaseService.swift; sourceTree = "<group>"; };
+		2764B87C1B89D66D009C328C /* SongLrc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLrc.swift; sourceTree = "<group>"; };
+		2764B87E1B89D9FA009C328C /* SongPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongPlay.swift; sourceTree = "<group>"; };
+		2772F9091B88C3FC000CA6A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		277EDFE61B8B50030024D275 /* JHAppKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHAppKey.swift; sourceTree = "<group>"; };
+		277EDFEA1B8B5A880024D275 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		277EDFEC1B8B5B030024D275 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		277EDFEE1B8B5B0D0024D275 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		277EDFF01B8B5B1A0024D275 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		277EDFF21B8B5B2F0024D275 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		277EDFF41B8B5B3C0024D275 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		277EDFF61B8B5B4E0024D275 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		277EDFFB1B8B5B910024D275 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		277EDFFC1B8B5B910024D275 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		277EDFFE1B8B5B910024D275 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		277EDFFF1B8B5B910024D275 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		277EE0001B8B5B910024D275 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		277EE0011B8B5B910024D275 /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		277EE0021B8B5B910024D275 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		277EE0031B8B5B910024D275 /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		277EE0041B8B5B910024D275 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		277EE0051B8B5B910024D275 /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		277EE0061B8B5B910024D275 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		277EE0071B8B5B910024D275 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		277EE0081B8B5B910024D275 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
+		277EE00A1B8B5B910024D275 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		277EE00B1B8B5B910024D275 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		277EE00C1B8B5B910024D275 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		277EE00D1B8B5B910024D275 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		277EE00E1B8B5B910024D275 /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
+		277EE00F1B8B5B910024D275 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
+		277EE0101B8B5B910024D275 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		277EE0111B8B5B910024D275 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
+		277EE0121B8B5B910024D275 /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
+		277EE0131B8B5B910024D275 /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
+		277EE0201B8B5BCE0024D275 /* MyMusic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMusic-Bridging-Header.h"; sourceTree = "<group>"; };
+		277EE0261B8B5DD50024D275 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		277EE02B1B8B608A0024D275 /* JHShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHShareHelper.swift; sourceTree = "<group>"; };
+		2780ABC11B8FFE3A0085E678 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		2780ABC51B8FFFED0085E678 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		2780ABC61B8FFFED0085E678 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		2780ABCD1B9044B40085E678 /* JHNativeSongView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHNativeSongView.swift; sourceTree = "<group>"; };
+		2783E38F1B8816D500A7F5D2 /* JHMusciListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusciListCell.swift; sourceTree = "<group>"; };
+		2783E3901B8816D500A7F5D2 /* JHMusciListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHMusciListCell.xib; sourceTree = "<group>"; };
+		2783E3961B88773600A7F5D2 /* JHMusicPlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusicPlayController.swift; sourceTree = "<group>"; };
+		2783E3971B88773600A7F5D2 /* JHMusicPlayController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHMusicPlayController.xib; sourceTree = "<group>"; };
+		278EE2EB1B9541FE00BC01BB /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		278EE2EC1B9541FE00BC01BB /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		27B25DC21B8EA6D1004F884F /* JHSongMP3Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHSongMP3Service.swift; sourceTree = "<group>"; };
+		27C394341B92980C00DF42D1 /* JHNativeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHNativeCell.swift; sourceTree = "<group>"; };
+		27E0FEA41B8D5BA10036374D /* JHMusicLyricHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusicLyricHelper.swift; sourceTree = "<group>"; };
+		27E0FEA81B8DCE350036374D /* JHImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHImageHelper.swift; sourceTree = "<group>"; };
+		352C12147CBFFB854156F76B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5CEBA91272FADE53C9751FE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2728EA8A1B87156700456E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2780ABC21B8FFE3A0085E678 /* libsqlite3.0.dylib in Frameworks */,
+				277EDFF71B8B5B4E0024D275 /* libicucore.dylib in Frameworks */,
+				277EE01F1B8B5B910024D275 /* ShareSDKUI.framework in Frameworks */,
+				277EDFF51B8B5B3C0024D275 /* libz.dylib in Frameworks */,
+				277EDFF31B8B5B2F0024D275 /* libstdc++.dylib in Frameworks */,
+				277EDFF11B8B5B1A0024D275 /* JavaScriptCore.framework in Frameworks */,
+				277EE0181B8B5B910024D275 /* libWeChatSDK.a in Frameworks */,
+				277EDFEF1B8B5B0D0024D275 /* ImageIO.framework in Frameworks */,
+				277EE0191B8B5B910024D275 /* MOBFoundation.framework in Frameworks */,
+				277EE01C1B8B5B910024D275 /* ShareSDKConnector.framework in Frameworks */,
+				277EDFED1B8B5B030024D275 /* Social.framework in Frameworks */,
+				277EDFEB1B8B5A880024D275 /* Accounts.framework in Frameworks */,
+				277EE01B1B8B5B910024D275 /* ShareSDK.framework in Frameworks */,
+				277EE0161B8B5B910024D275 /* libWeiboSDK.a in Frameworks */,
+				277EE01D1B8B5B910024D275 /* ShareSDKExtension.framework in Frameworks */,
+				277EE0141B8B5B910024D275 /* TencentOpenAPI.framework in Frameworks */,
+				2772F90A1B88C3FC000CA6A1 /* AVFoundation.framework in Frameworks */,
+				DD3CA6724CD18C6C5E7DE7E6 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2728EA9A1B87156700456E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2728EA841B87156700456E5C = {
+			isa = PBXGroup;
+			children = (
+				2728EA8F1B87156700456E5C /* MyMusic */,
+				2728EAA01B87156700456E5C /* MyMusicTests */,
+				2728EA8E1B87156700456E5C /* Products */,
+				BF6F7A678E1953122EC6499B /* Pods */,
+				BEB1136B5C6556AFC9D09B58 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2728EA8E1B87156700456E5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2728EA8D1B87156700456E5C /* MyMusic.app */,
+				2728EA9D1B87156700456E5C /* MyMusicTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2728EA8F1B87156700456E5C /* MyMusic */ = {
+			isa = PBXGroup;
+			children = (
+				2728EA921B87156700456E5C /* AppDelegate.swift */,
+				277EE0261B8B5DD50024D275 /* AppDelegateExtension.swift */,
+				277EE0201B8B5BCE0024D275 /* MyMusic-Bridging-Header.h */,
+				2728EAAD1B8719CC00456E5C /* Model */,
+				2728EAAE1B8719DE00456E5C /* Controller */,
+				2783E38E1B88169300A7F5D2 /* View */,
+				2728EAAF1B8719F500456E5C /* Service */,
+				277EE0281B8B60230024D275 /* Utils */,
+				2728EAB01B871A0400456E5C /* Others */,
+				2728EAB21B871CE800456E5C /* OpenSource */,
+				2728EA901B87156700456E5C /* Supporting Files */,
+			);
+			path = MyMusic;
+			sourceTree = "<group>";
+		};
+		2728EA901B87156700456E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2728EA911B87156700456E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2728EAA01B87156700456E5C /* MyMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				2728EAA31B87156700456E5C /* MyMusicTests.swift */,
+				2728EAA11B87156700456E5C /* Supporting Files */,
+			);
+			path = MyMusicTests;
+			sourceTree = "<group>";
+		};
+		2728EAA11B87156700456E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2728EAA21B87156700456E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2728EAAD1B8719CC00456E5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2728EAB71B87211000456E5C /* Song.swift */,
+				2764B87C1B89D66D009C328C /* SongLrc.swift */,
+				2764B87E1B89D9FA009C328C /* SongPlay.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2728EAAE1B8719DE00456E5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2728EAB31B871F0000456E5C /* JHListController.swift */,
+				2728EAB41B871F0000456E5C /* JHListController.xib */,
+				2783E3961B88773600A7F5D2 /* JHMusicPlayController.swift */,
+				2783E3971B88773600A7F5D2 /* JHMusicPlayController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2728EAAF1B8719F500456E5C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2728EABB1B87329B00456E5C /* JHBaseService.swift */,
+				27B25DC21B8EA6D1004F884F /* JHSongMP3Service.swift */,
+			);
+			name = Service;
+			path = Server;
+			sourceTree = "<group>";
+		};
+		2728EAB01B871A0400456E5C /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				2728EA941B87156700456E5C /* Images.xcassets */,
+				2728EA961B87156700456E5C /* LaunchScreen.xib */,
+				2728EAB91B8722B600456E5C /* JHMacros.swift */,
+				277EDFE61B8B50030024D275 /* JHAppKey.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		2728EAB21B871CE800456E5C /* OpenSource */ = {
+			isa = PBXGroup;
+			children = (
+				278EE2EA1B9541DD00BC01BB /* SWTableViewCell */,
+				2780ABC41B8FFFED0085E678 /* YTKKeyValueStore */,
+				277EDFF81B8B5B910024D275 /* libraries */,
+			);
+			path = OpenSource;
+			sourceTree = "<group>";
+		};
+		277EDFF81B8B5B910024D275 /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				277EDFF91B8B5B910024D275 /* extends */,
+				277EE00D1B8B5B910024D275 /* MOBFoundation.framework */,
+				277EE00E1B8B5B910024D275 /* ShareSDK.bundle */,
+				277EE00F1B8B5B910024D275 /* ShareSDK.framework */,
+				277EE0101B8B5B910024D275 /* ShareSDKConnector.framework */,
+				277EE0111B8B5B910024D275 /* ShareSDKExtension.framework */,
+				277EE0121B8B5B910024D275 /* ShareSDKUI.bundle */,
+				277EE0131B8B5B910024D275 /* ShareSDKUI.framework */,
+			);
+			path = libraries;
+			sourceTree = "<group>";
+		};
+		277EDFF91B8B5B910024D275 /* extends */ = {
+			isa = PBXGroup;
+			children = (
+				277EDFFA1B8B5B910024D275 /* QQSDK */,
+				277EDFFD1B8B5B910024D275 /* SinaWeiboSDK */,
+				277EE0091B8B5B910024D275 /* WeChatSDK */,
+			);
+			path = extends;
+			sourceTree = "<group>";
+		};
+		277EDFFA1B8B5B910024D275 /* QQSDK */ = {
+			isa = PBXGroup;
+			children = (
+				277EDFFB1B8B5B910024D275 /* TencentOpenAPI.framework */,
+				277EDFFC1B8B5B910024D275 /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = QQSDK;
+			sourceTree = "<group>";
+		};
+		277EDFFD1B8B5B910024D275 /* SinaWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				277EDFFE1B8B5B910024D275 /* libWeiboSDK.a */,
+				277EDFFF1B8B5B910024D275 /* WBHttpRequest+WeiboShare.h */,
+				277EE0001B8B5B910024D275 /* WBHttpRequest+WeiboToken.h */,
+				277EE0011B8B5B910024D275 /* WBHttpRequest+WeiboUser.h */,
+				277EE0021B8B5B910024D275 /* WBHttpRequest.h */,
+				277EE0031B8B5B910024D275 /* WBSDKBasicButton.h */,
+				277EE0041B8B5B910024D275 /* WBSDKCommentButton.h */,
+				277EE0051B8B5B910024D275 /* WBSDKRelationshipButton.h */,
+				277EE0061B8B5B910024D275 /* WeiboSDK.bundle */,
+				277EE0071B8B5B910024D275 /* WeiboSDK.h */,
+				277EE0081B8B5B910024D275 /* WeiboUser.h */,
+			);
+			path = SinaWeiboSDK;
+			sourceTree = "<group>";
+		};
+		277EE0091B8B5B910024D275 /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				277EE00A1B8B5B910024D275 /* libWeChatSDK.a */,
+				277EE00B1B8B5B910024D275 /* WXApi.h */,
+				277EE00C1B8B5B910024D275 /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+		277EE0281B8B60230024D275 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				277EE02B1B8B608A0024D275 /* JHShareHelper.swift */,
+				27E0FEA41B8D5BA10036374D /* JHMusicLyricHelper.swift */,
+				27E0FEA81B8DCE350036374D /* JHImageHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2780ABC41B8FFFED0085E678 /* YTKKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				2780ABC51B8FFFED0085E678 /* YTKKeyValueStore.h */,
+				2780ABC61B8FFFED0085E678 /* YTKKeyValueStore.m */,
+			);
+			path = YTKKeyValueStore;
+			sourceTree = "<group>";
+		};
+		2783E38E1B88169300A7F5D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2783E38F1B8816D500A7F5D2 /* JHMusciListCell.swift */,
+				2783E3901B8816D500A7F5D2 /* JHMusciListCell.xib */,
+				2780ABCD1B9044B40085E678 /* JHNativeSongView.swift */,
+				27C394341B92980C00DF42D1 /* JHNativeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		278EE2EA1B9541DD00BC01BB /* SWTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				278EE2EB1B9541FE00BC01BB /* SWTableViewCell.h */,
+				278EE2EC1B9541FE00BC01BB /* SWTableViewCell.m */,
+			);
+			path = SWTableViewCell;
+			sourceTree = "<group>";
+		};
+		BEB1136B5C6556AFC9D09B58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2780ABC11B8FFE3A0085E678 /* libsqlite3.0.dylib */,
+				277EDFF61B8B5B4E0024D275 /* libicucore.dylib */,
+				277EDFF41B8B5B3C0024D275 /* libz.dylib */,
+				277EDFF21B8B5B2F0024D275 /* libstdc++.dylib */,
+				277EDFF01B8B5B1A0024D275 /* JavaScriptCore.framework */,
+				277EDFEE1B8B5B0D0024D275 /* ImageIO.framework */,
+				277EDFEC1B8B5B030024D275 /* Social.framework */,
+				277EDFEA1B8B5A880024D275 /* Accounts.framework */,
+				2772F9091B88C3FC000CA6A1 /* AVFoundation.framework */,
+				352C12147CBFFB854156F76B /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6F7A678E1953122EC6499B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C70529A76ECF1AD19FBF321 /* Pods.debug.xcconfig */,
+				E5CEBA91272FADE53C9751FE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2728EA8C1B87156700456E5C /* MyMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2728EAA71B87156700456E5C /* Build configuration list for PBXNativeTarget "MyMusic" */;
+			buildPhases = (
+				3B79B870A91EE830235EA0C0 /* Check Pods Manifest.lock */,
+				2728EA891B87156700456E5C /* Sources */,
+				2728EA8A1B87156700456E5C /* Frameworks */,
+				2728EA8B1B87156700456E5C /* Resources */,
+				427FA84F22D13B2357122C00 /* Embed Pods Frameworks */,
+				046284EF0BFB40406373CBCE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyMusic;
+			productName = MyMusic;
+			productReference = 2728EA8D1B87156700456E5C /* MyMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2728EA9C1B87156700456E5C /* MyMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2728EAAA1B87156700456E5C /* Build configuration list for PBXNativeTarget "MyMusicTests" */;
+			buildPhases = (
+				2728EA991B87156700456E5C /* Sources */,
+				2728EA9A1B87156700456E5C /* Frameworks */,
+				2728EA9B1B87156700456E5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2728EA9F1B87156700456E5C /* PBXTargetDependency */,
+			);
+			name = MyMusicTests;
+			productName = MyMusicTests;
+			productReference = 2728EA9D1B87156700456E5C /* MyMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2728EA851B87156700456E5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "常健洪";
+				TargetAttributes = {
+					2728EA8C1B87156700456E5C = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					2728EA9C1B87156700456E5C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 2728EA8C1B87156700456E5C;
+					};
+				};
+			};
+			buildConfigurationList = 2728EA881B87156700456E5C /* Build configuration list for PBXProject "MyMusic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2728EA841B87156700456E5C;
+			productRefGroup = 2728EA8E1B87156700456E5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2728EA8C1B87156700456E5C /* MyMusic */,
+				2728EA9C1B87156700456E5C /* MyMusicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2728EA8B1B87156700456E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277EE0151B8B5B910024D275 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				2728EAB61B871F0000456E5C /* JHListController.xib in Resources */,
+				2783E3991B88773600A7F5D2 /* JHMusicPlayController.xib in Resources */,
+				2728EA981B87156700456E5C /* LaunchScreen.xib in Resources */,
+				277EE01A1B8B5B910024D275 /* ShareSDK.bundle in Resources */,
+				277EE0171B8B5B910024D275 /* WeiboSDK.bundle in Resources */,
+				2728EA951B87156700456E5C /* Images.xcassets in Resources */,
+				277EE01E1B8B5B910024D275 /* ShareSDKUI.bundle in Resources */,
+				2783E3921B8816D500A7F5D2 /* JHMusciListCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2728EA9B1B87156700456E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		046284EF0BFB40406373CBCE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B79B870A91EE830235EA0C0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		427FA84F22D13B2357122C00 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2728EA891B87156700456E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2764B87D1B89D66D009C328C /* SongLrc.swift in Sources */,
+				2764B87F1B89D9FA009C328C /* SongPlay.swift in Sources */,
+				27C394361B92980C00DF42D1 /* JHNativeCell.swift in Sources */,
+				2780ABCE1B9044B40085E678 /* JHNativeSongView.swift in Sources */,
+				27B25DC31B8EA6D1004F884F /* JHSongMP3Service.swift in Sources */,
+				2728EABA1B8722B600456E5C /* JHMacros.swift in Sources */,
+				27E0FEA91B8DCE350036374D /* JHImageHelper.swift in Sources */,
+				278EE2ED1B9541FE00BC01BB /* SWTableViewCell.m in Sources */,
+				2783E3911B8816D500A7F5D2 /* JHMusciListCell.swift in Sources */,
+				2728EABC1B87329B00456E5C /* JHBaseService.swift in Sources */,
+				2728EAB81B87211000456E5C /* Song.swift in Sources */,
+				2780ABC71B8FFFED0085E678 /* YTKKeyValueStore.m in Sources */,
+				277EDFE71B8B50030024D275 /* JHAppKey.swift in Sources */,
+				2783E3981B88773600A7F5D2 /* JHMusicPlayController.swift in Sources */,
+				277EE02C1B8B608A0024D275 /* JHShareHelper.swift in Sources */,
+				27E0FEA51B8D5BA10036374D /* JHMusicLyricHelper.swift in Sources */,
+				2728EA931B87156700456E5C /* AppDelegate.swift in Sources */,
+				277EE0271B8B5DD50024D275 /* AppDelegateExtension.swift in Sources */,
+				2728EAB51B871F0000456E5C /* JHListController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2728EA991B87156700456E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2728EAA41B87156700456E5C /* MyMusicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2728EA9F1B87156700456E5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2728EA8C1B87156700456E5C /* MyMusic */;
+			targetProxy = 2728EA9E1B87156700456E5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2728EA961B87156700456E5C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2728EA971B87156700456E5C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2728EAA51B87156700456E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2728EAA61B87156700456E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2728EAA81B87156700456E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C70529A76ECF1AD19FBF321 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/QQSDK",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries",
+				);
+				INFOPLIST_FILE = MyMusic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/SinaWeiboSDK",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/WeChatSDK",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMusic/MyMusic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2728EAA91B87156700456E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5CEBA91272FADE53C9751FE /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/QQSDK",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries",
+				);
+				INFOPLIST_FILE = MyMusic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/SinaWeiboSDK",
+					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/WeChatSDK",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMusic/MyMusic-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		2728EAAB1B87156700456E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MyMusicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMusic.app/MyMusic";
+			};
+			name = Debug;
+		};
+		2728EAAC1B87156700456E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MyMusicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMusic.app/MyMusic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2728EA881B87156700456E5C /* Build configuration list for PBXProject "MyMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2728EAA51B87156700456E5C /* Debug */,
+				2728EAA61B87156700456E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2728EAA71B87156700456E5C /* Build configuration list for PBXNativeTarget "MyMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2728EAA81B87156700456E5C /* Debug */,
+				2728EAA91B87156700456E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2728EAAA1B87156700456E5C /* Build configuration list for PBXNativeTarget "MyMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2728EAAB1B87156700456E5C /* Debug */,
+				2728EAAC1B87156700456E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2728EA851B87156700456E5C /* Project object */;
+}

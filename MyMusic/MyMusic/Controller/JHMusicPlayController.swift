@@ -75,7 +75,6 @@ class JHMusicPlayController: UIViewController {
     
     @IBAction func cancelBtnClick(sender: AnyObject) {
         menuDisappearAnimation()
-//        menuView.hidden = true
     }
   
     func menuAppearAnimation(){
@@ -149,9 +148,9 @@ class JHMusicPlayController: UIViewController {
         
     }
     
-    //这个东东不写 会执行到JHListController中的去  可能我复制xib的原因
+    //这个不写 会执行到JHListController中的去  可能我复制xib的原因
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("111111111touchesBegan")
+        println("JHMusicPlayController_touchesBegan")
         
     }
 

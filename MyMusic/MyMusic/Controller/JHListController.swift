@@ -218,15 +218,23 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     func songPlayBackDidFinish(palyResource: SongPlayResource) {
         
         if palyResource == SongPlayResource.Online {
-            var indexPath = NSIndexPath(forRow: selectedIndex! + 1, inSection: 0)
-            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+            var currentIndexPath = NSIndexPath(forRow: selectedIndex!, inSection: 0)
+            var currentCell = self.tableView.cellForRowAtIndexPath(currentIndexPath) as! JHMusciListCell
+            currentCell.playBtnClick(false)
+
+            var nextIndexPath = NSIndexPath(forRow: selectedIndex! + 1, inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(nextIndexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
             
             // 延迟1秒执行
             weak var weakSelf:JHListController? = self
             var delayInSeconds:Int64 = 1
             var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * Int64(NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                weakSelf!.musicListCellClick(JHMusicListCellClickType.Switch, indexPath: indexPath, isSelected: true)
+//                weakSelf!.musicListCellClick(JHMusicListCellClickType.Switch, indexPath: indexPath, isSelected: true)
+                
+                var nextCell = weakSelf!.tableView.cellForRowAtIndexPath(nextIndexPath) as! JHMusciListCell
+                nextCell.playBtnClick(true)
+                
             }
         } else if palyResource == SongPlayResource.Native {
             playNativeSong()
@@ -309,18 +317,25 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     
     
     func playNativeSong() {
+        
         nativeSongs = getNativeSongList()
         if (nativeSongs != nil) {
             if nativeSongs?.count > nativeIndex {
                 var song = nativeSongs!.objectAtIndex(nativeIndex) as! Song
-                    
-                    self.audioPlay.nativeSongPlay(song)
-                    
-                    weak var weakSelf:JHListController? = self
-                    parseLyricWithUrl(song.lrclink, { (result) -> () in
-                        weakSelf?.currentLrcData = result
-                    })
-                    nativeIndex++
+                self.audioPlay.nativeSongPlay(song)
+                
+                if selectedIndex >= 0 {
+                    var currentIndexPath = NSIndexPath(forRow: selectedIndex!, inSection: 0)
+                    var currentCell = self.tableView.cellForRowAtIndexPath(currentIndexPath) as! JHMusciListCell
+                    currentCell.playBtnClick(false)
+                    selectedIndex = -1
+                }
+                
+                weak var weakSelf:JHListController? = self
+                parseLyricWithUrl(song.lrclink, { (result) -> () in
+                    weakSelf?.currentLrcData = result
+                })
+                nativeIndex++
             }
         }
     }

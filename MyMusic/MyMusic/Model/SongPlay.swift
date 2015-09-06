@@ -130,6 +130,8 @@ class SongPlay: NSObject {
         }
     }
     
+    
+    
     func nativeSongPlay(song:Song) {
         
         playResource = SongPlayResource.Native

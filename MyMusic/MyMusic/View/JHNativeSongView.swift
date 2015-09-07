@@ -17,7 +17,7 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
    
     let identifier = "JHNativeCell"
     
-    var songs:NSArray!
+    var songs:NSArray = NSArray()
     
     var songsFunc:NSArray!{
         set(newValue) {

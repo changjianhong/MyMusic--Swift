@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import SnapKit
 import LiquidFloatingActionButton
+import pop
 
 class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UITableViewDataSource,JHMusicListCellProtocol,SongPlayDelegate,LiquidFloatingActionButtonDelegate,LiquidFloatingActionButtonDataSource,UIScrollViewDelegate {
 
@@ -47,6 +48,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
         initData()
         setupCenterUI()
         loadData()
@@ -73,12 +75,22 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
             return LiquidFloatingCell(icon: UIImage(named: iconName)!)
         }
         
-        cells.append(cellFactory("default_logo"))
+        cells.append(cellFactory("ic_brush_black_24dp_2x"))
         cells.append(cellFactory("list_icon_music_book"))
-        cells.append(cellFactory("list_icon_daxia_list_music"))
+        cells.append(cellFactory("detail_btn_download"))
+        cells.append(cellFactory("ic_color_lens_black_24dp_2x"))
     }
     
     func setupCenterUI(){
+        
+        self.view.insertSubview(nativeSongListView, atIndex: 2)
+        nativeSongListView.snp_makeConstraints { (make) -> Void in
+            make.bottom.left.equalTo(self.view)
+            make.top.equalTo(self.view).offset(22)
+            make.right.equalTo(self.view)
+        }
+        nativeSongListView.alpha = 0
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "并没什么卵用")
@@ -341,29 +353,34 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     }
     
     
-   func nativeSongsList() {
+    func nativeSongsList() {
         
-        var arr = self.view.subviews as NSArray
-        if arr.containsObject(nativeSongListView) {
-            return
-        }
-        
+        if nativeSongListView.alpha != 0 {return}
+    
         nativeSongs = getNativeSongList()
         nativeSongListView.songsFunc = nativeSongs
         
-        self.view.insertSubview(nativeSongListView, atIndex: 2)
-        
-        nativeSongListView.snp_makeConstraints { (make) -> Void in
-            make.bottom.left.equalTo(self.view)
-            make.top.equalTo(self.view).offset(22)
-            make.right.equalTo(self.view)
-        }
+        var anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        anim.fromValue = NSNumber(int: 0)
+        anim.duration = 1.0
+        anim.toValue = NSNumber(int: 1)
+        nativeSongListView.pop_addAnimation(anim, forKey: "insert")
+    
+    
     }
     
     func onLineSongsList() {
         
-        nativeSongListView.removeFromSuperview()
+        if nativeSongListView.alpha == 0 {return}
         
+        var anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        anim.duration = 1.0
+        anim.fromValue = NSNumber(int: 1)
+        anim.toValue = NSNumber(int: 0)
+        
+        nativeSongListView.pop_addAnimation(anim, forKey: "removed")
     }
  
     /**
@@ -384,12 +401,17 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
         
         switch index {
         case 0:
-            onLineSongsList()
+            let userController = JHUserController(nibName: "JHUserController", bundle: nil)
+            self.navigationController?.pushViewController(userController, animated: true)
+
             break
         case 1:
-            nativeSongsList()
+            onLineSongsList()
             break
         case 2:
+            nativeSongsList()
+            break
+        case 3:
             playNativeSong()
             break
         default:

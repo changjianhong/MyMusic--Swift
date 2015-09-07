@@ -131,7 +131,7 @@ class SongPlay: NSObject {
     }
     
     
-    
+    //本地音乐播放
     func nativeSongPlay(song:Song) {
         
         playResource = SongPlayResource.Native

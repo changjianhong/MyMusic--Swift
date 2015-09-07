@@ -75,6 +75,10 @@ class JHMusicPlayController: UIViewController {
     
     @IBAction func cancelBtnClick(sender: AnyObject) {
         menuDisappearAnimation()
+        var time = dispatch_time(DISPATCH_TIME_NOW, 1 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+            self.menuView.hidden = true
+        }
     }
   
     func menuAppearAnimation(){
@@ -83,7 +87,6 @@ class JHMusicPlayController: UIViewController {
         anim.springSpeed = 10
         anim.springBounciness = 20
         anim.toValue = NSNumber(int: 0)
-        
         menuViewTopContraint.pop_addAnimation(anim, forKey: "appear")
     }
     
@@ -92,20 +95,19 @@ class JHMusicPlayController: UIViewController {
         
         anim.toValue = NSNumber(int: -155)
         anim.duration = 1.0
-        
         menuViewTopContraint.pop_addAnimation(anim, forKey: "disappear")
     }
     
     
     func setupCenterUI() {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blureView2 = UIVisualEffectView(effect: blurEffect)
-        photoImageView.addSubview(blureView2)
-        blureView2.snp_makeConstraints { (make) -> Void in
-            make.right.left.top.equalTo(photoImageView)
-            make.height.equalTo(55)
-            
-        }
+//        let blureView2 = UIVisualEffectView(effect: blurEffect)
+//        photoImageView.addSubview(blureView2)
+//        blureView2.snp_makeConstraints { (make) -> Void in
+//            make.right.left.top.equalTo(photoImageView)
+//            make.height.equalTo(55)
+//            
+//        }
         let blurEffect2 = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blureView3 = UIVisualEffectView(effect: blurEffect)
         menuView.insertSubview(blureView3, atIndex: 0)
@@ -123,7 +125,7 @@ class JHMusicPlayController: UIViewController {
         returnBtn.tintColor = UIColor.redColor()
         var image = UIImage(named: "placeholder.png")
         backgroundImageView.kf_setImageWithURL(NSURL(string: song.pic_huge)!, placeholderImage: image)
-        
+        println(song.pic_huge)
         photoImageView.kf_setImageWithURL(NSURL(string: song.pic_huge)!, placeholderImage: image)
         titleName.text = song.title
         authorLabel.text = song.author

@@ -420,6 +420,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
         
         floatingActionButton.close()
     }
+    
 }
 
 

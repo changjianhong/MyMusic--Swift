@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 @objc protocol ServiceProtocol{
     func didRecieveResults(result:AnyObject)
@@ -54,13 +55,15 @@ class JHBaseService: NSObject {
         
         let errorCode = jsonData["error_code"] as! NSInteger
         if errorCode == 22000 {
-            let result = jsonData["result"] as! NSDictionary
-            let songlist = result["songlist"] as! NSArray
+            
+            let json = JSON(jsonData)
+            let songlist = json["result"]["songlist"].array!
+            
             listNum = songlist.count
             for songTmp in songlist {
-                var songDic = songTmp as! NSDictionary
+                var songDic = songTmp.dictionaryObject
                 var song = Song()
-                song.setValuesForKeysWithDictionary(songDic as NSDictionary as [NSObject : AnyObject])
+                song.setValuesForKeysWithDictionary(songDic!)
                 weak var weakSelf:JHBaseService? = self
                 getSongMP3(song, receiveBlock: { (url) -> () in
                     weakSelf?.addAtrribute(url, song: song)

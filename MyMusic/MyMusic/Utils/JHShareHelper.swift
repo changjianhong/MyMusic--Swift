@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import pop
     
 func showShareEditor(image:UIImage) {
     
@@ -55,26 +55,37 @@ func OAuth() {
 }
 
 
-func showShareMenu(view:UIView,songTitle:String) {
-    
+//func showShareMenu(view:UIView,songTitle:String) {
+//    
+//    var shareView = NSBundle.mainBundle().loadNibNamed("JHShareView", owner: nil, options: nil).first as! JHShareView
+//    view.addSubview(shareView)
+//    
+//}
+
+
+
+func share(platformType:SSDKPlatformType) {
     //1.创建分享参数
     var shareParames = NSMutableDictionary()
-    shareParames.SSDKSetupShareParamsByText(songTitle,
+    shareParames.SSDKSetupShareParamsByText("ad",
         images : UIImage(named: "640x1136.png"),
         url : NSURL(string:"https://github.com/changjianhong/--Swift.git"),
         title : "静听(cjh)",
         type : SSDKContentType.Auto)
-    //2.进行分享
-    ShareSDK.showShareActionSheet(view, items: nil, shareParams: shareParames) { (state : SSDKResponseState, platformType : SSDKPlatformType, userdata : [NSObject : AnyObject]!, contentEnity : SSDKContentEntity!, error : NSError!, Bool end) -> Void in
+    shareParames.SSDKEnableUseClientShare()
+    
+    ShareSDK.share(platformType, parameters: shareParames) { (state, userdata, contentEnity, error) -> Void in
         
         switch state{
-            
         case SSDKResponseState.Success: println("分享成功")
-        case SSDKResponseState.Fail:    println("分享失败,错误描述:\(error)")
-        case SSDKResponseState.Cancel:  println("分享取消")
-            
+        case SSDKResponseState.Fail: println("分享失败,错误描述:\(error)")
+        case SSDKResponseState.Cancel: println("分享取消")
+        
         default:
             break
         }
+        
     }
 }
+
+

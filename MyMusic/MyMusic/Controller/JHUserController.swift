@@ -22,11 +22,7 @@ class JHUserController: UIViewController {
 
     @IBAction func sinaBtnClick(sender: AnyObject) {
    
-        var request = WBAuthorizeRequest.request() as! WBAuthorizeRequest
-        request.redirectURI = "https://api.weibo.com/oauth2/default.html"
-        request.scope = "all"
-       
-        WeiboSDK.sendRequest(request)
+        OAuth()
     }
 
     

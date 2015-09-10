@@ -9,7 +9,7 @@
 import UIKit
 import pop
 
-class JHMusicPlayController: UIViewController {
+class JHMusicPlayController: UIViewController,JHShareViewDelegate {
     
     @IBOutlet weak var menuViewTopContraint: NSLayoutConstraint!
     @IBOutlet weak var menuView: UIView!
@@ -21,6 +21,7 @@ class JHMusicPlayController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var lyric: UITextView!
     
+    var shareView:JHShareView!
     var currentLrcData:NSArray!
     var song:Song!
     
@@ -65,7 +66,7 @@ class JHMusicPlayController: UIViewController {
     }
     
     @IBAction func shareBtnClick(sender: AnyObject) {
-        showShareMenu(self.view, song.title)
+        JHShareView.showInView(self.view, delegate: self)
     }
     
     @IBAction func downloadBtnClick(sender: AnyObject) {
@@ -83,7 +84,6 @@ class JHMusicPlayController: UIViewController {
   
     func menuAppearAnimation(){
         var anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        
         anim.springSpeed = 10
         anim.springBounciness = 20
         anim.toValue = NSNumber(int: 0)
@@ -157,6 +157,12 @@ class JHMusicPlayController: UIViewController {
     }
 
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+    }
+    
+    //MARK: - JHShareViewDelegate
+    
+    func shareViewBtnClick(index: Int) {
         
     }
 }

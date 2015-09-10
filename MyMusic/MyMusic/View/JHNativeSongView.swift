@@ -80,6 +80,7 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
         return true
     }
     
+    //MARK:- SWTableViewCellDelegate
     
     func swippableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
         
@@ -109,5 +110,8 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
             break
         }
     }
+    
+    
+    
     
 }

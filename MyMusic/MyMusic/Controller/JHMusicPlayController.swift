@@ -77,8 +77,9 @@ class JHMusicPlayController: UIViewController,JHShareViewDelegate {
     @IBAction func cancelBtnClick(sender: AnyObject) {
         menuDisappearAnimation()
         var time = dispatch_time(DISPATCH_TIME_NOW, 1 * Int64(NSEC_PER_SEC))
+        weak var weakSelf:JHMusicPlayController? = self
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-            self.menuView.hidden = true
+            weakSelf!.menuView.hidden = true
         }
     }
   
@@ -101,13 +102,7 @@ class JHMusicPlayController: UIViewController,JHShareViewDelegate {
     
     func setupCenterUI() {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-//        let blureView2 = UIVisualEffectView(effect: blurEffect)
-//        photoImageView.addSubview(blureView2)
-//        blureView2.snp_makeConstraints { (make) -> Void in
-//            make.right.left.top.equalTo(photoImageView)
-//            make.height.equalTo(55)
-//            
-//        }
+
         let blurEffect2 = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blureView3 = UIVisualEffectView(effect: blurEffect)
         menuView.insertSubview(blureView3, atIndex: 0)
@@ -164,5 +159,7 @@ class JHMusicPlayController: UIViewController,JHShareViewDelegate {
     
     func shareViewBtnClick(index: Int) {
         
+        configPlatformTypeAndShare(index)
     }
+    
 }

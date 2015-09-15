@@ -55,13 +55,29 @@ func OAuth() {
 }
 
 
-//func showShareMenu(view:UIView,songTitle:String) {
-//    
-//    var shareView = NSBundle.mainBundle().loadNibNamed("JHShareView", owner: nil, options: nil).first as! JHShareView
-//    view.addSubview(shareView)
-//    
-//}
-
+func configPlatformTypeAndShare(index:Int){
+    
+    var platformType:SSDKPlatformType
+    
+    switch index {
+    case 0:
+        platformType = SSDKPlatformType.TypeQQ
+    case 1:
+        platformType = SSDKPlatformType.SubTypeQZone
+    case 2:
+        platformType = SSDKPlatformType.TypeSinaWeibo
+    case 3:
+        platformType = SSDKPlatformType.TypeWechat
+    case 4:
+        platformType = SSDKPlatformType.SubTypeWechatTimeline
+    default:
+        platformType = SSDKPlatformType.TypeUnknown
+        break
+    }
+    
+    share(platformType)
+    
+}
 
 
 func share(platformType:SSDKPlatformType) {

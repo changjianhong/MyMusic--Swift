@@ -72,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		0C70529A76ECF1AD19FBF321 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		2728EA8D1B87156700456E5C /* 静听.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "静听.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2728EA8D1B87156700456E5C /* MyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2728EA911B87156700456E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2728EA921B87156700456E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2728EA971B87156700456E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		2728EA8E1B87156700456E5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2728EA8D1B87156700456E5C /* 静听.app */,
+				2728EA8D1B87156700456E5C /* MyMusic.app */,
 				2728EA9D1B87156700456E5C /* MyMusicTests.xctest */,
 			);
 			name = Products;
@@ -446,7 +446,7 @@
 			);
 			name = MyMusic;
 			productName = MyMusic;
-			productReference = 2728EA8D1B87156700456E5C /* 静听.app */;
+			productReference = 2728EA8D1B87156700456E5C /* MyMusic.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2728EA9C1B87156700456E5C /* MyMusicTests */ = {
@@ -745,7 +745,7 @@
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/SinaWeiboSDK",
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/WeChatSDK",
 				);
-				PRODUCT_NAME = "静听";
+				PRODUCT_NAME = MyMusic;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyMusic/MyMusic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -771,7 +771,7 @@
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/SinaWeiboSDK",
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/WeChatSDK",
 				);
-				PRODUCT_NAME = "静听";
+				PRODUCT_NAME = MyMusic;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyMusic/MyMusic-Bridging-Header.h";
 			};
 			name = Release;

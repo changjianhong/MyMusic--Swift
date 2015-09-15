@@ -50,21 +50,34 @@ class JHShareView: UIView {
             d.shareViewBtnClick(sender.tag)
         }
     }
+    
     @IBAction func cancelBtnClick(sender: UIButton) {
-        
+        weak var weakSelf:JHShareView? = self
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.frame = CGRectMake(0, kScreenHeight, kScreenWidth, kHeight)
+            }) { (completion) -> Void in
+                weakSelf!.isShowing = false
+                weakSelf!.bgView.alpha = 0.0
+                weakSelf!.bgView.removeFromSuperview()
+                weakSelf!.removeFromSuperview()
+        }
     }
     
     
     func showInView(view:UIView){
         self.bgView = UIView(frame: view.bounds)
+        bgView.backgroundColor = UIColor.blackColor()
+        bgView.alpha = 0.0
         self.isShowing = true
         self.frame = CGRectMake(0, kScreenHeight, kScreenWidth, kHeight)
+        view.addSubview(bgView)
         view.addSubview(self)
         
+        weak var weakSelf:JHShareView? = self
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.frame = CGRectMake(0, kScreenHeight - kHeight, kScreenWidth, kHeight)
             }) { (completion) -> Void in
-                
+                weakSelf!.bgView.alpha = 0.6
         }
     }
     

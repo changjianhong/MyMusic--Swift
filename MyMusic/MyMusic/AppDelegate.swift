@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        Bugtags.startWithAppKey(BugAppkey, invocationEvent: BTGInvocationEventBubble)
+        
         WeiboSDK.registerApp(SinaKey)
         
         setupShareSdk()

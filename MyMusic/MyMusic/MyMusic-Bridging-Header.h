@@ -22,3 +22,7 @@
 #import "YTKKeyValueStore.h"
 
 #import "SWTableViewCell.h"
+
+//Bugtags
+#import <Bugtags/Bugtags.h>
+

@@ -1,9 +1,11 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_FRAMEWORK_BUILD_PATH"
+CLANG_CXX_LANGUAGE_STANDARD = c++11
+CLANG_CXX_LIBRARY = libc++
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Bugtags/" "$(PODS_ROOT)/Bugtags/"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bugtags"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_FRAMEWORK_BUILD_PATH/Alamofire.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/FMDB.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/Kingfisher.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/LiquidFloatingActionButton.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/MJExtension.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/SnapKit.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/SwiftyJSON.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/pop.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "Alamofire" -framework "FMDB" -framework "Kingfisher" -framework "LiquidFloatingActionButton" -framework "MJExtension" -framework "SnapKit" -framework "SwiftyJSON" -framework "pop"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FMDB.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Kingfisher.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/LiquidFloatingActionButton.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MJExtension.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SnapKit.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SwiftyJSON.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/pop.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Bugtags"
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "Alamofire" -framework "Bugtags" -framework "CFNetwork" -framework "CoreLocation" -framework "FMDB" -framework "ImageIO" -framework "Kingfisher" -framework "LiquidFloatingActionButton" -framework "MJExtension" -framework "Security" -framework "SnapKit" -framework "SwiftyJSON" -framework "SystemConfiguration" -framework "UIKit" -framework "pop"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}/Pods

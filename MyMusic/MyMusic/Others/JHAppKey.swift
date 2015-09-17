@@ -21,3 +21,5 @@ let QQAppKey:String = "Ev5bw8qLLHihSldA"
 
 let WXAppID:String = "wx9cf4e118054759c5"
 let WXAppSecret:String = "a5710d84cce6759b2ad00fa387991b8e"
+
+let BugAppkey:String = "ab3daa5c73dff101f262a3626125e5bd"

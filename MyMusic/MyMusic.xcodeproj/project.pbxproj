@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2728EA931B87156700456E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EA921B87156700456E5C /* AppDelegate.swift */; };
-		2728EA951B87156700456E5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2728EA941B87156700456E5C /* Images.xcassets */; };
 		2728EA981B87156700456E5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2728EA961B87156700456E5C /* LaunchScreen.xib */; };
 		2728EAA41B87156700456E5C /* MyMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EAA31B87156700456E5C /* MyMusicTests.swift */; };
 		2728EAB51B871F0000456E5C /* JHListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EAB31B871F0000456E5C /* JHListController.swift */; };
@@ -18,6 +17,8 @@
 		2728EABC1B87329B00456E5C /* JHBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2728EABB1B87329B00456E5C /* JHBaseService.swift */; };
 		2764B87D1B89D66D009C328C /* SongLrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764B87C1B89D66D009C328C /* SongLrc.swift */; };
 		2764B87F1B89D9FA009C328C /* SongPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764B87E1B89D9FA009C328C /* SongPlay.swift */; };
+		2765BB791BA0679C00AC861D /* JHShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765BB781BA0679C00AC861D /* JHShareView.swift */; };
+		2765BB7B1BA0689300AC861D /* JHShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765BB7A1BA0689300AC861D /* JHShareView.xib */; };
 		2772F90A1B88C3FC000CA6A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772F9091B88C3FC000CA6A1 /* AVFoundation.framework */; };
 		277EDFE71B8B50030024D275 /* JHAppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDFE61B8B50030024D275 /* JHAppKey.swift */; };
 		277EDFEB1B8B5A880024D275 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277EDFEA1B8B5A880024D275 /* Accounts.framework */; };
@@ -48,6 +49,9 @@
 		2783E3921B8816D500A7F5D2 /* JHMusciListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2783E3901B8816D500A7F5D2 /* JHMusciListCell.xib */; };
 		2783E3981B88773600A7F5D2 /* JHMusicPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783E3961B88773600A7F5D2 /* JHMusicPlayController.swift */; };
 		2783E3991B88773600A7F5D2 /* JHMusicPlayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2783E3971B88773600A7F5D2 /* JHMusicPlayController.xib */; };
+		278CEA831B9D7770003C5426 /* JHUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278CEA811B9D7770003C5426 /* JHUserController.swift */; };
+		278CEA841B9D7770003C5426 /* JHUserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 278CEA821B9D7770003C5426 /* JHUserController.xib */; };
+		278CEA891B9D8ECE003C5426 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278CEA881B9D8ECE003C5426 /* Images.xcassets */; };
 		278EE2ED1B9541FE00BC01BB /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278EE2EC1B9541FE00BC01BB /* SWTableViewCell.m */; };
 		27B25DC31B8EA6D1004F884F /* JHSongMP3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B25DC21B8EA6D1004F884F /* JHSongMP3Service.swift */; };
 		27C394361B92980C00DF42D1 /* JHNativeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C394341B92980C00DF42D1 /* JHNativeCell.swift */; };
@@ -71,7 +75,6 @@
 		2728EA8D1B87156700456E5C /* MyMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2728EA911B87156700456E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2728EA921B87156700456E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2728EA941B87156700456E5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		2728EA971B87156700456E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2728EA9D1B87156700456E5C /* MyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2728EAA21B87156700456E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		2728EABB1B87329B00456E5C /* JHBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHBaseService.swift; sourceTree = "<group>"; };
 		2764B87C1B89D66D009C328C /* SongLrc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLrc.swift; sourceTree = "<group>"; };
 		2764B87E1B89D9FA009C328C /* SongPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongPlay.swift; sourceTree = "<group>"; };
+		2765BB781BA0679C00AC861D /* JHShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHShareView.swift; sourceTree = "<group>"; };
+		2765BB7A1BA0689300AC861D /* JHShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHShareView.xib; sourceTree = "<group>"; };
 		2772F9091B88C3FC000CA6A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		277EDFE61B8B50030024D275 /* JHAppKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHAppKey.swift; sourceTree = "<group>"; };
 		277EDFEA1B8B5A880024D275 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -126,6 +131,9 @@
 		2783E3901B8816D500A7F5D2 /* JHMusciListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHMusciListCell.xib; sourceTree = "<group>"; };
 		2783E3961B88773600A7F5D2 /* JHMusicPlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusicPlayController.swift; sourceTree = "<group>"; };
 		2783E3971B88773600A7F5D2 /* JHMusicPlayController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHMusicPlayController.xib; sourceTree = "<group>"; };
+		278CEA811B9D7770003C5426 /* JHUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHUserController.swift; sourceTree = "<group>"; };
+		278CEA821B9D7770003C5426 /* JHUserController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHUserController.xib; sourceTree = "<group>"; };
+		278CEA881B9D8ECE003C5426 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		278EE2EB1B9541FE00BC01BB /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
 		278EE2EC1B9541FE00BC01BB /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
 		27B25DC21B8EA6D1004F884F /* JHSongMP3Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHSongMP3Service.swift; sourceTree = "<group>"; };
@@ -252,6 +260,8 @@
 				2728EAB41B871F0000456E5C /* JHListController.xib */,
 				2783E3961B88773600A7F5D2 /* JHMusicPlayController.swift */,
 				2783E3971B88773600A7F5D2 /* JHMusicPlayController.xib */,
+				278CEA811B9D7770003C5426 /* JHUserController.swift */,
+				278CEA821B9D7770003C5426 /* JHUserController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,7 +279,7 @@
 		2728EAB01B871A0400456E5C /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				2728EA941B87156700456E5C /* Images.xcassets */,
+				278CEA881B9D8ECE003C5426 /* Images.xcassets */,
 				2728EA961B87156700456E5C /* LaunchScreen.xib */,
 				2728EAB91B8722B600456E5C /* JHMacros.swift */,
 				277EDFE61B8B50030024D275 /* JHAppKey.swift */,
@@ -375,6 +385,8 @@
 				2783E3901B8816D500A7F5D2 /* JHMusciListCell.xib */,
 				2780ABCD1B9044B40085E678 /* JHNativeSongView.swift */,
 				27C394341B92980C00DF42D1 /* JHNativeCell.swift */,
+				2765BB781BA0679C00AC861D /* JHShareView.swift */,
+				2765BB7A1BA0689300AC861D /* JHShareView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,13 +509,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2765BB7B1BA0689300AC861D /* JHShareView.xib in Resources */,
 				277EE0151B8B5B910024D275 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				278CEA891B9D8ECE003C5426 /* Images.xcassets in Resources */,
 				2728EAB61B871F0000456E5C /* JHListController.xib in Resources */,
+				278CEA841B9D7770003C5426 /* JHUserController.xib in Resources */,
 				2783E3991B88773600A7F5D2 /* JHMusicPlayController.xib in Resources */,
 				2728EA981B87156700456E5C /* LaunchScreen.xib in Resources */,
 				277EE01A1B8B5B910024D275 /* ShareSDK.bundle in Resources */,
 				277EE0171B8B5B910024D275 /* WeiboSDK.bundle in Resources */,
-				2728EA951B87156700456E5C /* Images.xcassets in Resources */,
 				277EE01E1B8B5B910024D275 /* ShareSDKUI.bundle in Resources */,
 				2783E3921B8816D500A7F5D2 /* JHMusciListCell.xib in Resources */,
 			);
@@ -572,11 +586,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2764B87D1B89D66D009C328C /* SongLrc.swift in Sources */,
+				2765BB791BA0679C00AC861D /* JHShareView.swift in Sources */,
 				2764B87F1B89D9FA009C328C /* SongPlay.swift in Sources */,
 				27C394361B92980C00DF42D1 /* JHNativeCell.swift in Sources */,
 				2780ABCE1B9044B40085E678 /* JHNativeSongView.swift in Sources */,
 				27B25DC31B8EA6D1004F884F /* JHSongMP3Service.swift in Sources */,
 				2728EABA1B8722B600456E5C /* JHMacros.swift in Sources */,
+				278CEA831B9D7770003C5426 /* JHUserController.swift in Sources */,
 				27E0FEA91B8DCE350036374D /* JHImageHelper.swift in Sources */,
 				278EE2ED1B9541FE00BC01BB /* SWTableViewCell.m in Sources */,
 				2783E3911B8816D500A7F5D2 /* JHMusciListCell.swift in Sources */,
@@ -729,7 +745,7 @@
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/SinaWeiboSDK",
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/WeChatSDK",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyMusic;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyMusic/MyMusic-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -755,7 +771,7 @@
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/SinaWeiboSDK",
 					"$(PROJECT_DIR)/MyMusic/OpenSource/libraries/extends/WeChatSDK",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MyMusic;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyMusic/MyMusic-Bridging-Header.h";
 			};
 			name = Release;

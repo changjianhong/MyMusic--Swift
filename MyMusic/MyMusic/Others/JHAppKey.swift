@@ -14,7 +14,7 @@ let MobSecret:String = "d9969150b5d745d711698509fa801472"
 
 let SinaKey:String = "3199592764"
 let SinaSecret:String = "ceb1d5da5ca5f82eeef064728bb7a825"
-let SinaRedirect_uri = "http://jingting.com"
+let SinaRedirect_uri = "https://api.weibo.com/oauth2/default.html"
 
 let QQAppID:String = "1104752719"
 let QQAppKey:String = "Ev5bw8qLLHihSldA"

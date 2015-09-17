@@ -85,15 +85,24 @@ class JHMusciListCell: UITableViewCell {
     }
     
     
+    
     @IBAction func switchBtnClick(sender: UIButton) {
         
+        playBtnClick(true)
+        
+    }
+    
+    
+    func playBtnClick(isPlaying:Bool) {
         clickNum = clickNum + 1
         
         switchBtn.selected = !switchBtn.selected
         
-        delegate?.musicListCellClick(JHMusicListCellClickType.Switch, indexPath: self.indexPath!, isSelected: switchBtn.selected)
-        
+        if isPlaying {
+           delegate?.musicListCellClick(JHMusicListCellClickType.Switch, indexPath: self.indexPath!, isSelected: switchBtn.selected)
+        }
     }
+    
     
     @IBAction func moreAction(sender: UIButton) {
 //        delegate?.musicListCellClick(JHMusicListCellClickType.More, indexPath: self.indexPath!, isNext: false)

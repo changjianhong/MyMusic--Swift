@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import pop
     
 func showShareEditor(image:UIImage) {
     
         // 1.创建分享参数
-        var shareParames = NSMutableDictionary()
+        let shareParames = NSMutableDictionary()
         
         shareParames.SSDKSetupShareParamsByText("分享内容",
             images : image,
@@ -24,9 +24,9 @@ func showShareEditor(image:UIImage) {
             
             switch state{
                 
-            case SSDKResponseState.Success: println("分享成功")
-            case SSDKResponseState.Fail:    println("分享失败,错误描述:\(error)")
-            case SSDKResponseState.Cancel:  println("分享取消")
+            case SSDKResponseState.Success: print("分享成功")
+            case SSDKResponseState.Fail:    print("分享失败,错误描述:\(error)")
+            case SSDKResponseState.Cancel:  print("分享取消")
                 
             default:
                 break
@@ -44,9 +44,9 @@ func OAuth() {
         
         switch state{
             
-        case SSDKResponseState.Success: println("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
-        case SSDKResponseState.Fail:    println("授权失败,错误描述:\(error)")
-        case SSDKResponseState.Cancel:  println("操作取消")
+        case SSDKResponseState.Success: print("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
+        case SSDKResponseState.Fail:    print("授权失败,错误描述:\(error)")
+        case SSDKResponseState.Cancel:  print("操作取消")
             
         default:
             break
@@ -55,26 +55,53 @@ func OAuth() {
 }
 
 
-func showShareMenu(view:UIView,songTitle:String) {
+func configPlatformTypeAndShare(index:Int){
     
+    var platformType:SSDKPlatformType
+    
+    switch index {
+    case 0:
+        platformType = SSDKPlatformType.TypeQQ
+    case 1:
+        platformType = SSDKPlatformType.SubTypeQZone
+    case 2:
+        platformType = SSDKPlatformType.TypeSinaWeibo
+    case 3:
+        platformType = SSDKPlatformType.TypeWechat
+    case 4:
+        platformType = SSDKPlatformType.SubTypeWechatTimeline
+    default:
+        platformType = SSDKPlatformType.TypeUnknown
+        break
+    }
+    
+    share(platformType)
+    
+}
+
+
+func share(platformType:SSDKPlatformType) {
     //1.创建分享参数
-    var shareParames = NSMutableDictionary()
-    shareParames.SSDKSetupShareParamsByText(songTitle,
+    let shareParames = NSMutableDictionary()
+    shareParames.SSDKSetupShareParamsByText("ad",
         images : UIImage(named: "640x1136.png"),
         url : NSURL(string:"https://github.com/changjianhong/--Swift.git"),
         title : "静听(cjh)",
         type : SSDKContentType.Auto)
-    //2.进行分享
-    ShareSDK.showShareActionSheet(view, items: nil, shareParams: shareParames) { (state : SSDKResponseState, platformType : SSDKPlatformType, userdata : [NSObject : AnyObject]!, contentEnity : SSDKContentEntity!, error : NSError!, Bool end) -> Void in
+    shareParames.SSDKEnableUseClientShare()
+    
+    ShareSDK.share(platformType, parameters: shareParames) { (state, userdata, contentEnity, error) -> Void in
         
         switch state{
-            
-        case SSDKResponseState.Success: println("分享成功")
-        case SSDKResponseState.Fail:    println("分享失败,错误描述:\(error)")
-        case SSDKResponseState.Cancel:  println("分享取消")
-            
+        case SSDKResponseState.Success: print("分享成功")
+        case SSDKResponseState.Fail: print("分享失败,错误描述:\(error)")
+        case SSDKResponseState.Cancel: print("分享取消")
+        
         default:
             break
         }
+        
     }
 }
+
+

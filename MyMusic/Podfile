@@ -2,11 +2,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod "LiquidFloatingActionButton"
+
+pod "LiquidFloatingActionButton", :git => 'https://github.com/yoavlt/LiquidFloatingActionButton.git', :branch => 'swift-2.0'
 pod 'FMDB'
 pod 'pop', '~> 1.0'
-pod 'Alamofire', '~> 1.3'
-pod 'Kingfisher', '~> 1.4'
-pod 'SnapKit', '~> 0.12.0'
-pod 'SwiftyJSON', '~> 2.2.1'
+pod 'Alamofire', '~> 2.0'
+pod 'Kingfisher', '~> 1.5'
+pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit.git', :branch => 'swift-2.0'
 pod 'MJExtension'
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'xcode7'

@@ -19,7 +19,7 @@ let kMusicListURL:String = "http://tingapi.ting.baidu.com/v1/restserver/ting?met
 /// 歌曲mp3
 func kMusic(title:String, author:String) -> String{
     
-    var url = "http://box.zhangmen.baidu.com/x?op=12&count=1&title=\(title)$$\(author)$$$$"
+    let url = "http://box.zhangmen.baidu.com/x?op=12&count=1&title=\(title)$$\(author)$$$$"
     
     return url
     
@@ -55,12 +55,12 @@ func parseString(str:String) -> String {
     }
     
     if string.containsString("(") {
-        var loc = string.rangeOfString("(").location
+        let loc = string.rangeOfString("(").location
         string = string.substringToIndex(loc)
     }
     
     if string.containsString("-") {
-        var loc = string.rangeOfString("-").location
+        let loc = string.rangeOfString("-").location
         string = string.substringToIndex(loc)
     }
  

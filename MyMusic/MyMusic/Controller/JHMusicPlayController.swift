@@ -9,7 +9,7 @@
 import UIKit
 import pop
 
-class JHMusicPlayController: UIViewController {
+class JHMusicPlayController: UIViewController,JHShareViewDelegate {
     
     @IBOutlet weak var menuViewTopContraint: NSLayoutConstraint!
     @IBOutlet weak var menuView: UIView!
@@ -21,6 +21,7 @@ class JHMusicPlayController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var lyric: UITextView!
     
+    var shareView:JHShareView!
     var currentLrcData:NSArray!
     var song:Song!
     
@@ -65,7 +66,7 @@ class JHMusicPlayController: UIViewController {
     }
     
     @IBAction func shareBtnClick(sender: AnyObject) {
-        showShareMenu(self.view, song.title)
+        JHShareView.showInView(self.view, delegate: self)
     }
     
     @IBAction func downloadBtnClick(sender: AnyObject) {
@@ -75,39 +76,33 @@ class JHMusicPlayController: UIViewController {
     
     @IBAction func cancelBtnClick(sender: AnyObject) {
         menuDisappearAnimation()
-//        menuView.hidden = true
+        let time = dispatch_time(DISPATCH_TIME_NOW, 1 * Int64(NSEC_PER_SEC))
+        weak var weakSelf:JHMusicPlayController? = self
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+            weakSelf!.menuView.hidden = true
+        }
     }
   
     func menuAppearAnimation(){
-        var anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        
+        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
         anim.springSpeed = 10
         anim.springBounciness = 20
         anim.toValue = NSNumber(int: 0)
-        
         menuViewTopContraint.pop_addAnimation(anim, forKey: "appear")
     }
     
     func menuDisappearAnimation(){
-        var anim = POPBasicAnimation(propertyNamed: kPOPLayoutConstraintConstant)
+        let anim = POPBasicAnimation(propertyNamed: kPOPLayoutConstraintConstant)
         
         anim.toValue = NSNumber(int: -155)
         anim.duration = 1.0
-        
         menuViewTopContraint.pop_addAnimation(anim, forKey: "disappear")
     }
     
     
     func setupCenterUI() {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blureView2 = UIVisualEffectView(effect: blurEffect)
-        photoImageView.addSubview(blureView2)
-        blureView2.snp_makeConstraints { (make) -> Void in
-            make.right.left.top.equalTo(photoImageView)
-            make.height.equalTo(55)
-            
-        }
-        let blurEffect2 = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+
         let blureView3 = UIVisualEffectView(effect: blurEffect)
         menuView.insertSubview(blureView3, atIndex: 0)
         blureView3.snp_makeConstraints { (make) -> Void in
@@ -122,9 +117,9 @@ class JHMusicPlayController: UIViewController {
         }
         
         returnBtn.tintColor = UIColor.redColor()
-        var image = UIImage(named: "placeholder.png")
+        let image = UIImage(named: "placeholder.png")
         backgroundImageView.kf_setImageWithURL(NSURL(string: song.pic_huge)!, placeholderImage: image)
-        
+        print(song.pic_huge)
         photoImageView.kf_setImageWithURL(NSURL(string: song.pic_huge)!, placeholderImage: image)
         titleName.text = song.title
         authorLabel.text = song.author
@@ -136,12 +131,12 @@ class JHMusicPlayController: UIViewController {
     }
     
     func loadLyric(succeedBlock:(String)->()) {
-        weak var weakSelf:JHMusicPlayController? = self
-        parseLyricWithUrl(song.lrclink, { (result) -> () in
+//        weak var weakSelf:JHMusicPlayController? = self
+        parseLyricWithUrl(song.lrclink, succeed: { (result) -> () in
             var lyricStr = ""
             for  lyric in result! {
-                var songLyric = lyric as! SongLrc
-                var lyricLine = songLyric.text as! String
+                let songLyric = lyric as! SongLrc
+                let lyricLine = songLyric.text as String
                 lyricStr = lyricStr.stringByAppendingString(lyricLine).stringByAppendingString("\n")
             }
             succeedBlock(lyricStr)
@@ -149,13 +144,20 @@ class JHMusicPlayController: UIViewController {
         
     }
     
-    //这个东东不写 会执行到JHListController中的去  可能我复制xib的原因
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("111111111touchesBegan")
-        
-    }
+    //这个不写 会执行到JHListController中的去  可能我复制xib的原因
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("JHMusicPlayController_touchesBegan")
 
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    }
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
     }
+    
+    //MARK: - JHShareViewDelegate
+    
+    func shareViewBtnClick(index: Int) {
+        
+        configPlatformTypeAndShare(index)
+    }
+    
 }

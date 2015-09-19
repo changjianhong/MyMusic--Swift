@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 @objc protocol ServiceProtocol{
     func didRecieveResults(result:AnyObject)
@@ -31,18 +32,28 @@ class JHBaseService: NSObject {
     */
     func getSongList(urlStr:String){
         
-        var error:NSError?
+//        var error:NSError?
         
         weak var weakSelf:JHBaseService? = self
         
-        Alamofire.request(.GET, urlStr).responseJSON(options: NSJSONReadingOptions.AllowFragments) { (request, response, jsonData, error) -> Void in
-            
-            if let err = error {
-                return
-            }
-            
-            self.parseJsonData(jsonData as! NSDictionary)
+        
+        Alamofire.request(.GET, urlStr)
+            .responseJSON { _, _, result in
+                print(result.isSuccess)
+//                debugPrint(result)
+                
+                weakSelf!.parseJsonData(result.value as! NSDictionary)
+                
         }
+        
+//        Alamofire.request(.GET, urlStr).responseJSON(options: NSJSONReadingOptions.AllowFragments) { (request, response, jsonData, error) -> Void in
+//            
+//            if let err = error {
+//                return
+//            }
+//            
+//            self.parseJsonData(jsonData as! NSDictionary)
+//        }
     }
     
     /**
@@ -54,17 +65,19 @@ class JHBaseService: NSObject {
         
         let errorCode = jsonData["error_code"] as! NSInteger
         if errorCode == 22000 {
-            let result = jsonData["result"] as! NSDictionary
-            let songlist = result["songlist"] as! NSArray
+            
+            let json = JSON(jsonData)
+            let songlist = json["result"]["songlist"].array!
+            
             listNum = songlist.count
             for songTmp in songlist {
-                var songDic = songTmp as! NSDictionary
-                var song = Song()
-                song.setValuesForKeysWithDictionary(songDic as NSDictionary as [NSObject : AnyObject])
+                let songDic = songTmp.dictionaryObject
+                let song = Song()
+                song.setValuesForKeysWithDictionary(songDic!)
                 weak var weakSelf:JHBaseService? = self
                 getSongMP3(song, receiveBlock: { (url) -> () in
                     weakSelf?.addAtrribute(url, song: song)
-                }, { () -> () in
+                }, failBlock: { () -> () in
                     weakSelf?.addAtrribute(nil, song: nil)
                 })
                 
@@ -77,7 +90,7 @@ class JHBaseService: NSObject {
         num = num + 1
         
         if let u = url {
-            song!.songUrl = url!
+            song!.songUrl = u
             list.addObject(song!)
         }
         

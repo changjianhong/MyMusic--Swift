@@ -17,7 +17,7 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
    
     let identifier = "JHNativeCell"
     
-    var songs:NSArray!
+    var songs:NSArray = NSArray()
     
     var songsFunc:NSArray!{
         set(newValue) {
@@ -48,7 +48,7 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? JHNativeCell
         if cell == nil {
             
-            var rightUtilityButtons = NSMutableArray()
+            let rightUtilityButtons = NSMutableArray()
             rightUtilityButtons.addUtilityButtonWithColor(UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 1.0), title: "置顶")
             rightUtilityButtons.addUtilityButtonWithColor(UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 1.0), title: "删除")
             
@@ -56,7 +56,7 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
             
             cell?.delegate = self
         }
-        var song = songs[indexPath.row] as! Song
+        let song = songs[indexPath.row] as! Song
         
         cell?.song = song
 //        cell?.textLabel?.text = song.title
@@ -65,11 +65,11 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("didSelectRowAtIndexPath \(indexPath.row)")
+        print("didSelectRowAtIndexPath \(indexPath.row)")
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        println("scroll view did begin dragging")
+        print("scroll view did begin dragging")
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -80,26 +80,27 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
         return true
     }
     
+    //MARK:- SWTableViewCellDelegate
     
     func swippableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
         
-        var songList = NSMutableArray(array: songs)
-        var nativeCell = cell as! JHNativeCell
-        var selectedIndex = self.tableView.indexPathForCell(nativeCell)
-        var song = songs[selectedIndex!.row] as! Song
+        let songList = NSMutableArray(array: songs)
+        let nativeCell = cell as! JHNativeCell
+        let selectedIndex = self.tableView.indexPathForCell(nativeCell)
+        let song = songs[selectedIndex!.row] as! Song
         
-        println(selectedIndex?.row)
+        print(selectedIndex?.row)
         
         switch index {
         case 0:
-            println("置顶")
+            print("置顶")
             songList.removeObjectAtIndex(selectedIndex!.row)
             songList.insertObject(song, atIndex: 0)
             songs = songList
             self.tableView.reloadData()
             break
         case 1:
-            println("删除")
+            print("删除")
             deleteNativeSong(song.title)
             songList.removeObjectAtIndex(selectedIndex!.row)
             songs = songList
@@ -109,5 +110,8 @@ class JHNativeSongView: UIView,UITableViewDelegate,UITableViewDataSource,SWTable
             break
         }
     }
+    
+    
+    
     
 }

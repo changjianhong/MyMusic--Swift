@@ -96,7 +96,7 @@ class SongPlay: NSObject {
             
             return
         }
-        weak var weakSelf:SongPlay? = self
+//        weak var weakSelf:SongPlay? = self
         currentSong = song
         
         self.audioPlayer.contentURL = NSURL(string: song.songUrl)
@@ -121,8 +121,8 @@ class SongPlay: NSObject {
     }
     
     func songNext() {
-        var index = songList?.indexOfObject(currentSong!)
-        var song = songList[index! + 1] as! Song
+        let index = songList?.indexOfObject(currentSong!)
+        let song = songList[index! + 1] as! Song
         songBegin(song, playSucceed: { () -> () in
             
         }) { () -> () in
@@ -130,14 +130,16 @@ class SongPlay: NSObject {
         }
     }
     
+    
+    //本地音乐播放
     func nativeSongPlay(song:Song) {
         
         playResource = SongPlayResource.Native
         
-        var url = getNativeSongURL(song.title)
+        let url = getNativeSongURL(song.title)
         
         if let u = url {
-            self.audioPlayer.contentURL = url!
+            self.audioPlayer.contentURL = u
             self.audioPlayer.play()
         }
         currentSong = song

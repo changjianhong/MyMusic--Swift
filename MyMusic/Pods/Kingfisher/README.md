@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-<a href="https://circleci.com/gh/onevcat/Kingfisher"><img src="https://img.shields.io/circleci/project/onevcat/Kingfisher/master.svg"></a> 
-<a href="https://github.com/Carthage/Carthage/"><img src="https://img.shields.io/badge/Carthage-✔-f2a77e.svg?style=flat"></a> 
-<a href="http://cocoadocs.org/docsets/Kingfisher"><img src="https://img.shields.io/cocoapods/v/Kingfisher.svg?style=flat"></a> 
-<a href="https://raw.githubusercontent.com/onevcat/Kingfisher/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat"></a> 
-<a href="http://cocoadocs.org/docsets/Kingfisher"><img src="https://img.shields.io/cocoapods/p/Kingfisher.svg?style=flat"></a> 
+<a href="https://travis-ci.org/onevcat/Kingfisher"><img src="https://img.shields.io/travis/onevcat/Kingfisher/master.svg"></a>
+<a href="https://github.com/Carthage/Carthage/"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="http://cocoadocs.org/docsets/Kingfisher"><img src="https://img.shields.io/cocoapods/v/Kingfisher.svg?style=flat"></a>
+<a href="https://raw.githubusercontent.com/onevcat/Kingfisher/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat"></a>
+<a href="http://cocoadocs.org/docsets/Kingfisher"><img src="https://img.shields.io/cocoapods/p/Kingfisher.svg?style=flat"></a>
 <img src="https://img.shields.io/badge/made%20with-%3C3-orange.svg">
 </p>
 
@@ -19,15 +19,15 @@ Kingfisher is a lightweight and pure Swift implemented library for downloading a
 * Multiple-layer cache. Downloaded images will be cached in both memory and disk. So there is no need to download again and this could boost your app dramatically.
 * Cache management. You can set the max duration or size the cache could take. And the cache will also be cleaned automatically to prevent taking too much resource.
 * Modern framework. Kingfisher uses `NSURLSession` and the latest technology of GCD, which makes it a strong and swift framework. It also provides you easy APIs to use.
-* Cancelable processing task. You can cancel the downloading or image retrieving process if it is not needed anymore.
+* Cancelable processing task. You can cancel the downloading process if it is not needed anymore.
 * Independent components. You can use the downloader or caching system separately. Or even create your own cache based on Kingfisher's code.
 * Options to decompress the image in background before rendering it, which could improve the UI performance.
-* Categories over `UIImageView`, `UIButton` and `WKInterfaceImage` for setting image from an URL directly.
+* Categories over `UIImageView` and `UIButton` for setting image from an URL directly.
 
 ## Requirements
 
-* iOS 8.0+ (iOS 8.2+ for Watch App)
-* Xcode 6.3 or above
+* iOS 8.0+
+* Xcode 7.0 or above
 
 ## Installation
 
@@ -48,7 +48,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Kingfisher', '~> 1.4'
+pod 'Kingfisher', '~> 1.5'
 ```
 
 Then, run the following command:
@@ -73,7 +73,7 @@ $ brew install carthage
 To integrate Kingfisher into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "onevcat/Kingfisher" >= 1.4
+github "onevcat/Kingfisher" >= 1.5
 ```
 
 Then, run the following command to build the Kingfisher framework:
@@ -140,6 +140,17 @@ In most cases, Kingfisher is used in a reusable cell. Since the downloading proc
 ```swift
 imageView.kf_setImageWithURL(NSURL(string: "http://your_image_url.png")!, placeholderImage: nil)
 ```
+
+By default, `Kingfisher` will use `absoluteString` of the URL as the key for cache. If you need another key instead of URL's `absoluteString`, there is another set of APIs accepting `Resource` as parameter:
+
+```swift
+let URL = NSURL(string: "http://your_image_url.png")!
+let resource = Resource(downloadURL: URL, cacheKey: "your_customized_key")
+
+imageView.kf_setImageWithResource(resource)
+```
+
+It will ask Kingfisher's manager to get the image for the "your_customized_key" from memory and disk first. If the manager does not find it, it will try to download the image at the URL, and store it with `cacheKey` ("your_customized_key" here) for next use.
 
 #### Options
 

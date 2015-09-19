@@ -8,13 +8,16 @@
 (https://github.com/Carthage/Carthage)
 
 LiquidFloatingActionButton is floating action button component of [material design](https://www.google.com/design/spec/material-design/introduction.html) in liquid state, inspired by [Material In a Liquid State](http://www.materialup.com/posts/material-in-a-liquid-state).
+This is also [spinner loader](https://github.com/yoavlt/LiquidLoader) components in liquid state.
 
 ![Demo](https://github.com/yoavlt/LiquidFloatingActionButton/blob/master/Demo/top.gif?raw=true)
 
 ## Features
 - [x] liquid animation
 - [x] easily custoizable
-- [x] Objective-C complatible
+- [x] Objective-C compatible
+
+You can play a demo with [appetize.io](https://appetize.io/app/f4t42hgqbnbma4m12jcg3aeebg?device=iphone5s&scale=75&orientation=portrait)
 
 ## Usage
 
@@ -22,7 +25,6 @@ You just need implement `LiquidFloatingActionButtonDataSource` and `LiquidFloati
 
 ```swift
 let floatingActionButton = LiquidFloatingActionButton(frame: floatingFrame)
-floatingActionButton.responsible = false
 floatingActionButton.dataSource = self
 floatingActionButton.delegate = self
 ```

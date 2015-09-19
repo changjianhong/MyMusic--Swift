@@ -12,28 +12,41 @@ import Alamofire
 
 func getSongMP3(song:Song, receiveBlock:(String)->() = {param in} ,failBlock:()->()) {
     
-    var author = parseString(song.author)
-    var title = parseString(song.title)
+    let author = parseString(song.author)
+    let title = parseString(song.title)
     
-    var urlstr = kMusic(title as String, author as String).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+    let urlstr = kMusic(title as String, author: author as String).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
     
-    Alamofire.request(.GET,urlstr).responseString(encoding: NSUTF8StringEncoding) { (request, response, receiveString, error) -> Void in
+    
+//    var urlstr1 = kMusic(title as String, author: author as String).stringByAddingPercentEncodingWithAllowedCharacters(<#T##allowedCharacters: NSCharacterSet##NSCharacterSet#>)
+    
+    
+    Alamofire.request(.GET, urlstr).responseString { (request, response, receiveString) -> Void in
         
-        if receiveString == nil{
+    }
+    
+    
+    
+    
+    
+    
+    Alamofire.request(.GET,urlstr).responseString(encoding: NSUTF8StringEncoding) { (request, response, receiveString) -> Void in
+        
+        if receiveString.value == nil{
             failBlock()
             return
         }
         
-        var strArr = receiveString!.componentsSeparatedByString("<![CDATA[") as Array
+        var strArr = receiveString.value!.componentsSeparatedByString("<![CDATA[") as Array
         
         if strArr.count > 2 {
             var s1:String = strArr[1] as String
             s1 = s1.stringByReplacingOccurrencesOfString("$]]></encode><decode>", withString: "")
             s1 = s1.stringByReplacingOccurrencesOfString("]]></encode><decode>", withString: "")
-            var sArr = s1.componentsSeparatedByString("/") as Array
-            var lastS:String = sArr.last!
+            let sArr = s1.componentsSeparatedByString("/") as Array
+            let lastS:String = sArr.last!
             
-            var s2Arr:NSArray = strArr[2].componentsSeparatedByString("]]") as NSArray
+            let s2Arr:NSArray = strArr[2].componentsSeparatedByString("]]") as NSArray
             
             s1 = s1.stringByReplacingOccurrencesOfString(lastS as String, withString:(s2Arr[0] as! String) as String)
             
@@ -51,25 +64,25 @@ func getSongMP3(song:Song, receiveBlock:(String)->() = {param in} ,failBlock:()-
 */
 func downloadSongMP3(song:Song){
     
-    Alamofire.download(.GET, song.songUrl){(temporaryURL, response) -> NSURL in
-        let fileManager = NSFileManager.defaultManager()
-        
-        if let directoryURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0] as? NSURL {
-            
-            var mp3DirectoryURL = directoryURL.URLByAppendingPathComponent("MP3")
-            
-            fileManager.createDirectoryAtURL(mp3DirectoryURL, withIntermediateDirectories: true, attributes: nil, error: nil)
-            
-            let pathComponent = song.title.stringByAppendingString(".mp3")
-            var directory = mp3DirectoryURL.URLByAppendingPathComponent(pathComponent)
-            return directory
-        }
-        return temporaryURL
-    }.progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) -> Void in
-        if totalBytesRead == totalBytesExpectedToRead {
-            saveSongMP3Info(song)
-        }
-    }
+//    Alamofire.download(.GET, song.songUrl){(temporaryURL, response) -> NSURL in
+//        let fileManager = NSFileManager.defaultManager()
+//        
+//        if let directoryURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0] as? NSURL {
+//            
+//            var mp3DirectoryURL = directoryURL.URLByAppendingPathComponent("MP3")
+//            
+//            fileManager.createDirectoryAtURL(mp3DirectoryURL, withIntermediateDirectories: true, attributes: nil, error: nil)
+//            
+//            let pathComponent = song.title.stringByAppendingString(".mp3")
+//            var directory = mp3DirectoryURL.URLByAppendingPathComponent(pathComponent)
+//            return directory
+//        }
+//        return temporaryURL
+//    }.progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) -> Void in
+//        if totalBytesRead == totalBytesExpectedToRead {
+//            saveSongMP3Info(song)
+//        }
+//    }
 }
 
 /**
@@ -79,7 +92,7 @@ func downloadSongMP3(song:Song){
 */
 func saveSongMP3Info(song:Song) {
     dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
-        var dbStore = YTKKeyValueStore(DBWithName: "songSqlite.db")
+        let dbStore = YTKKeyValueStore(DBWithName: "songSqlite.db")
         dbStore.createTableWithName("songs")
         dbStore.putModelObject(song, withId: song.title, intoTable: "songs")
     })
@@ -94,7 +107,7 @@ func saveSongMP3Info(song:Song) {
 func getNativeSongURL(songTitle:String) -> NSURL?{
     let fileManager = NSFileManager.defaultManager()
     if let directoryURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0] as? NSURL {
-        var mp3DirectoryURL:NSURL? = directoryURL.URLByAppendingPathComponent("MP3").URLByAppendingPathComponent("\(songTitle).mp3")
+        let mp3DirectoryURL:NSURL? = directoryURL.URLByAppendingPathComponent("MP3").URLByAppendingPathComponent("\(songTitle).mp3")
         if mp3DirectoryURL != nil {
            return mp3DirectoryURL
         }
@@ -104,9 +117,9 @@ func getNativeSongURL(songTitle:String) -> NSURL?{
 }
 
 func getNativeSongList() -> NSArray! {
-    var dbStore = YTKKeyValueStore(DBWithName: "songSqlite.db")
+    let dbStore = YTKKeyValueStore(DBWithName: "songSqlite.db")
     if dbStore.isTableExists("songs") {
-        var items = dbStore.getAllModelObjectByClassName(Song.classForCoder(), fromTable: "songs") as! NSArray
+        let items = dbStore.getAllModelObjectByClassName(Song.classForCoder(), fromTable: "songs") as! NSArray
         return items
     } else {
         dbStore.createTableWithName("songs")
@@ -115,15 +128,15 @@ func getNativeSongList() -> NSArray! {
 }
 
 func deleteNativeSong(songTitle:String) {
-    var dbStore = YTKKeyValueStore(DBWithName: "songSqlite.db")
-    if dbStore.isTableExists("songs") {
-        dbStore.deleteObjectById(songTitle, fromTable: "songs")
-    }
-    let fileManager = NSFileManager.defaultManager()
-    var url = getNativeSongURL(songTitle)
-    if url != nil {
-        fileManager.removeItemAtURL(url!, error: nil)
-    }
+//    var dbStore = YTKKeyValueStore(DBWithName: "songSqlite.db")
+//    if dbStore.isTableExists("songs") {
+//        dbStore.deleteObjectById(songTitle, fromTable: "songs")
+//    }
+//    let fileManager = NSFileManager.defaultManager()
+//    var url = getNativeSongURL(songTitle)
+//    if url != nil {
+//        fileManager.removeItemAtURL(url!, error: nil)
+//    }
     
 }
 

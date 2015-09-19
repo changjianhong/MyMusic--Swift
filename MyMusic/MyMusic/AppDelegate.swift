@@ -17,11 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        setupShareSdk()
         
+//        Bugtags.startWithAppKey(BugAppkey, invocationEvent: BTGInvocationEventBubble)
+        
+//        WeiboSDK.registerApp(SinaKey)
+        
+        setupShareSdk()
         let vc = JHListController()
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = vc
+        let navi = UINavigationController(rootViewController: vc)
+        
+        window?.rootViewController = navi
         window?.makeKeyAndVisible()
         
         return true

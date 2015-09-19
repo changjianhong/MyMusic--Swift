@@ -1,35 +1,58 @@
 PODS:
-  - Alamofire (1.3.1)
+  - Alamofire (2.0.1)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - Kingfisher (1.4.5)
-  - LiquidFloatingActionButton (0.1.0)
+  - Kingfisher (1.5.0)
+  - LiquidFloatingActionButton (0.1.1)
   - MJExtension (2.5.9)
   - pop (1.0.7)
-  - SnapKit (0.12.0)
+  - SnapKit (0.13.0)
   - SwiftyJSON (2.2.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 1.3)
+  - Alamofire (~> 2.0)
   - FMDB
-  - Kingfisher (~> 1.4)
-  - LiquidFloatingActionButton
+  - Kingfisher (~> 1.5)
+  - LiquidFloatingActionButton (from `https://github.com/yoavlt/LiquidFloatingActionButton.git`,
+    branch `swift-2.0`)
   - MJExtension
   - pop (~> 1.0)
-  - SnapKit (~> 0.12.0)
-  - SwiftyJSON (~> 2.2.1)
+  - SnapKit (from `https://github.com/SnapKit/SnapKit.git`, branch `swift-2.0`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`, branch `xcode7`)
+
+EXTERNAL SOURCES:
+  LiquidFloatingActionButton:
+    :branch: swift-2.0
+    :git: https://github.com/yoavlt/LiquidFloatingActionButton.git
+  SnapKit:
+    :branch: swift-2.0
+    :git: https://github.com/SnapKit/SnapKit.git
+  SwiftyJSON:
+    :branch: xcode7
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  LiquidFloatingActionButton:
+    :commit: 2931fa76145cd3ee99ef7c1a8aaa83a5c6127632
+    :git: https://github.com/yoavlt/LiquidFloatingActionButton.git
+  SnapKit:
+    :commit: 4f19419528baa3dfaca20e26fea2be410ddc79e2
+    :git: https://github.com/SnapKit/SnapKit.git
+  SwiftyJSON:
+    :commit: 6eb4cda062fa09c4658e4184f92d822058f226e3
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
+  Alamofire: 1d8e208d616fbbfd2391b15eae766d07c96cdc49
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  Kingfisher: 22fa7d41c83b214c19fbb82a77a9db52300b3719
-  LiquidFloatingActionButton: 705328a08290b635f3aa2d516c4b1c8c07c1376a
+  Kingfisher: cbb280faba0e9ae0a73d2c51072f7dd94ccfe640
+  LiquidFloatingActionButton: dcdae1e59eb07eccbf60c027001a4d6731c345c9
   MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
-  SnapKit: 00c388aa3bf1944c1b55472f31e841f75bd83882
+  SnapKit: 69fe274c71511df89a5591c11437a8b826bfa9eb
   SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

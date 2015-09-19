@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import SnapKit
 import LiquidFloatingActionButton
+import pop
 
 class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UITableViewDataSource,JHMusicListCellProtocol,SongPlayDelegate,LiquidFloatingActionButtonDelegate,LiquidFloatingActionButtonDataSource,UIScrollViewDelegate {
 
@@ -47,6 +48,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
         initData()
         setupCenterUI()
         loadData()
@@ -54,15 +56,15 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     
     func initData() {
         //网络请求
-        var service = JHBaseService()
+        let service = JHBaseService()
         self.service = service
         service.delegate = self
         
         self.audioPlay.delegate = self
     
-        var session = AVAudioSession.sharedInstance()
-        session.setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        session.setActive(true, error: nil)
+//        var session = AVAudioSession.sharedInstance()
+//        session.setCategory(AVAudioSessionCategoryPlayback, error: nil)
+//        session.setActive(true, error: nil)
         
         self.tableView.registerNib(UINib(nibName: "JHMusciListCell", bundle:nil), forCellReuseIdentifier: identifier)
         
@@ -73,12 +75,22 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
             return LiquidFloatingCell(icon: UIImage(named: iconName)!)
         }
         
-        cells.append(cellFactory("default_logo"))
+        cells.append(cellFactory("ic_brush_black_24dp_2x"))
         cells.append(cellFactory("list_icon_music_book"))
-        cells.append(cellFactory("list_icon_daxia_list_music"))
+        cells.append(cellFactory("detail_btn_download"))
+        cells.append(cellFactory("ic_color_lens_black_24dp_2x"))
     }
     
     func setupCenterUI(){
+        
+        self.view.insertSubview(nativeSongListView, atIndex: 2)
+        nativeSongListView.snp_makeConstraints { (make) -> Void in
+            make.bottom.left.equalTo(self.view)
+            make.top.equalTo(self.view).offset(22)
+            make.right.equalTo(self.view)
+        }
+        nativeSongListView.alpha = 0
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "并没什么卵用")
@@ -89,7 +101,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
         self.tableView.showsHorizontalScrollIndicator = false
         //##########
         let floatingFrame = CGRect(x: kScreenWidth - 46 - 16, y: kScreenHeight - 46 - 16, width: 46, height: 46)
-        println(kScreenWidth,kScreenHeight)
+        print(kScreenWidth,kScreenHeight)
         floatingActionButton = LiquidFloatingActionButton(frame: floatingFrame)
         self.view.addSubview(floatingActionButton)
 
@@ -97,11 +109,11 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
         floatingActionButton.delegate = self
         floatingActionButton.dataSource = self
         
-        var height:CGFloat = 3
-        var width:CGFloat = (kScreenHeight - 20)
-        var y:CGFloat = 20 + width / 2
-        var x:CGFloat = kScreenWidth - width / 2 - 1
-        var progress = UIProgressView(frame: CGRectMake(x, y, width, height))
+        let height:CGFloat = 3
+        let width:CGFloat = (kScreenHeight - 20)
+        let y:CGFloat = 20 + width / 2
+        let x:CGFloat = kScreenWidth - width / 2 - 1
+        let progress = UIProgressView(frame: CGRectMake(x, y, width, height))
         progress.tintColor = UIColor.redColor()
         self.view.addSubview(progress)
         self.progress = progress
@@ -110,7 +122,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     }
     
     func refreshData(){
-        println("refreshData")
+        print("refreshData")
         NSThread.sleepForTimeInterval(2)
         refreshControl.endRefreshing()
     }
@@ -187,7 +199,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
         if cell == nil {
             cell = JHMusciListCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
         }
-        var song = songList[indexPath.row] as! Song
+        let song = songList[indexPath.row] as! Song
         cell?.delegate = self
         cell?.setupViewsWithData(song, isSelected: selectedIndex == indexPath.row, indexPath: indexPath)
         
@@ -196,9 +208,9 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var song = songList[indexPath.row] as! Song
+        let song = songList[indexPath.row] as! Song
         
-        var vc = JHMusicPlayController(song: song)
+        let vc = JHMusicPlayController(song: song)
         
         self.presentViewController(vc, animated: true) { () -> Void in
             
@@ -218,44 +230,70 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     func songPlayBackDidFinish(palyResource: SongPlayResource) {
         
         if palyResource == SongPlayResource.Online {
-            var indexPath = NSIndexPath(forRow: selectedIndex! + 1, inSection: 0)
-            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+            let currentIndexPath = NSIndexPath(forRow: selectedIndex!, inSection: 0)
+            let currentCell = self.tableView.cellForRowAtIndexPath(currentIndexPath) as! JHMusciListCell
+            currentCell.playBtnClick(false)
+
+            let nextIndexPath = NSIndexPath(forRow: selectedIndex! + 1, inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(nextIndexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
             
             // 延迟1秒执行
             weak var weakSelf:JHListController? = self
-            var delayInSeconds:Int64 = 1
-            var popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * Int64(NSEC_PER_SEC));
+            let delayInSeconds:Int64 = 1
+            let popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * Int64(NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                weakSelf!.musicListCellClick(JHMusicListCellClickType.Switch, indexPath: indexPath, isSelected: true)
+//                weakSelf!.musicListCellClick(JHMusicListCellClickType.Switch, indexPath: indexPath, isSelected: true)
+                
+                let nextCell = weakSelf!.tableView.cellForRowAtIndexPath(nextIndexPath) as! JHMusciListCell
+                nextCell.playBtnClick(true)
+                
             }
         } else if palyResource == SongPlayResource.Native {
             playNativeSong()
         }
-        println("songPlayBackDidFinish")
+        print("songPlayBackDidFinish")
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        println("touchesBegan")
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent?) {
+//        print("touchesBegan")
+//        for touch in touches {
+//            var t = touch as! UITouch
+//            touchBeginPoint = t.locationInView(lyricView)
+//        }
+//    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("touchesBegan")
         for touch in touches {
-            var t = touch as! UITouch
+            let t = touch 
             touchBeginPoint = t.locationInView(lyricView)
         }
     }
     
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            var t = touch as! UITouch
-            var point = t.locationInView(lyricView)
+            let t = touch
+            let point = t.locationInView(lyricView)
             topContraint.constant = topContraint.constant + (point.y - touchBeginPoint.y)
             leftContraint.constant = leftContraint.constant + (point.x - touchBeginPoint.x)
         }
     }
     
+    
+//    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        for touch in touches {
+//            var t = touch as! UITouch
+//            var point = t.locationInView(lyricView)
+//            topContraint.constant = topContraint.constant + (point.y - touchBeginPoint.y)
+//            leftContraint.constant = leftContraint.constant + (point.x - touchBeginPoint.x)
+//        }
+//    }
+    
     ///JHMusicListCellProtocol
     func musicListCellClick(type:JHMusicListCellClickType, indexPath:NSIndexPath, isSelected:Bool) {
         
-        var song = songList[indexPath.row] as! Song
+        let song = songList[indexPath.row] as! Song
         if type == JHMusicListCellClickType.Switch {
             if indexPath.row != selectedIndex {
                 
@@ -265,17 +303,17 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
             } else {
                 weak var weakSelf:JHListController? = self
                 weakSelf!.audioPlay.songBegin(song, playSucceed: { () -> () in
-                    parseLyricWithUrl(song.lrclink, { (result) -> () in
+                    parseLyricWithUrl(song.lrclink, succeed: { (result) -> () in
                         weakSelf?.currentLrcData = result
                     })
                 }, playFail: { () -> () in
-                    println("playFail")
+                    print("playFail")
                     weakSelf!.songPlayBackDidFinish(SongPlayResource.Online)
                 })
                 selectedIndex = indexPath.row
             }
         } else if type == JHMusicListCellClickType.More {
-            println("More")
+            print("More")
         }
         self.tableView.reloadData()
     }
@@ -290,16 +328,16 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
             self.progress.progress = p
             self.musicProgress.progress = p
             if currentLrcData != nil {
-                var predicate:NSPredicate = NSPredicate(format: "total = %d", Int(c))
-                var lrcData = currentLrcData!.filteredArrayUsingPredicate(predicate)
+                let predicate:NSPredicate = NSPredicate(format: "total = %d", Int(c))
+                let lrcData = currentLrcData!.filteredArrayUsingPredicate(predicate)
                 if lrcData.count > 0 {
-                    var lrcLine:SongLrc = lrcData.last as! SongLrc
+                    let lrcLine:SongLrc = lrcData.last as! SongLrc
                     currentLyric.text = lrcLine.text as String
-                    var currentIndex = currentLrcData.indexOfObject(lrcLine)
+                    let currentIndex = currentLrcData.indexOfObject(lrcLine)
                     if currentIndex > currentLrcData.count - 3 { return }
-                    var nextLine = currentLrcData[currentIndex + 1] as! SongLrc
+                    let nextLine = currentLrcData[currentIndex + 1] as! SongLrc
                     nextLyric.text = nextLine.text as String
-                    var thirdLine = currentLrcData[currentIndex + 2] as! SongLrc
+                    let thirdLine = currentLrcData[currentIndex + 2] as! SongLrc
                     thirdLyric.text = thirdLine.text as String
                 }
             }
@@ -309,46 +347,58 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     
     
     func playNativeSong() {
+        
         nativeSongs = getNativeSongList()
         if (nativeSongs != nil) {
             if nativeSongs?.count > nativeIndex {
-                var song = nativeSongs!.objectAtIndex(nativeIndex) as! Song
-                    
-                    self.audioPlay.nativeSongPlay(song)
-                    
-                    weak var weakSelf:JHListController? = self
-                    parseLyricWithUrl(song.lrclink, { (result) -> () in
-                        weakSelf?.currentLrcData = result
-                    })
-                    nativeIndex++
+                let song = nativeSongs!.objectAtIndex(nativeIndex) as! Song
+                self.audioPlay.nativeSongPlay(song)
+                
+                if selectedIndex >= 0 {
+                    let currentIndexPath = NSIndexPath(forRow: selectedIndex!, inSection: 0)
+                    let currentCell = self.tableView.cellForRowAtIndexPath(currentIndexPath) as! JHMusciListCell
+                    currentCell.playBtnClick(false)
+                    selectedIndex = -1
+                }
+                
+                weak var weakSelf:JHListController? = self
+                parseLyricWithUrl(song.lrclink, succeed: { (result) -> () in
+                    weakSelf?.currentLrcData = result
+                })
+                nativeIndex++
             }
         }
     }
     
     
-   func nativeSongsList() {
+    func nativeSongsList() {
         
-        var arr = self.view.subviews as NSArray
-        if arr.containsObject(nativeSongListView) {
-            return
-        }
-        
+        if nativeSongListView.alpha != 0 {return}
+    
         nativeSongs = getNativeSongList()
         nativeSongListView.songsFunc = nativeSongs
         
-        self.view.insertSubview(nativeSongListView, atIndex: 2)
-        
-        nativeSongListView.snp_makeConstraints { (make) -> Void in
-            make.bottom.left.equalTo(self.view)
-            make.top.equalTo(self.view).offset(22)
-            make.right.equalTo(self.view)
-        }
+        let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        anim.fromValue = NSNumber(int: 0)
+        anim.duration = 1.0
+        anim.toValue = NSNumber(int: 1)
+        nativeSongListView.pop_addAnimation(anim, forKey: "insert")
+    
+    
     }
     
     func onLineSongsList() {
         
-        nativeSongListView.removeFromSuperview()
+        if nativeSongListView.alpha == 0 {return}
         
+        let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        anim.duration = 1.0
+        anim.fromValue = NSNumber(int: 1)
+        anim.toValue = NSNumber(int: 0)
+        
+        nativeSongListView.pop_addAnimation(anim, forKey: "removed")
     }
  
     /**
@@ -365,16 +415,21 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
     }
     
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-        println("did Tapped! \(index)")
+        print("did Tapped! \(index)")
         
         switch index {
         case 0:
-            onLineSongsList()
+            let userController = JHUserController(nibName: "JHUserController", bundle: nil)
+            self.navigationController?.pushViewController(userController, animated: true)
+
             break
         case 1:
-            nativeSongsList()
+            onLineSongsList()
             break
         case 2:
+            nativeSongsList()
+            break
+        case 3:
             playNativeSong()
             break
         default:
@@ -383,6 +438,7 @@ class JHListController: UIViewController,ServiceProtocol,UITableViewDelegate,UIT
         
         floatingActionButton.close()
     }
+    
 }
 
 

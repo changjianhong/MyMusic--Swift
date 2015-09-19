@@ -16,6 +16,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evH-QQ-ZqC">
                         <rect key="frame" x="5" y="5" width="34" height="34"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="evH-QQ-ZqC" secondAttribute="height" multiplier="34:34" id="jv5-5X-mcc"/>
                             <constraint firstAttribute="width" constant="34" id="vVp-5J-ffZ"/>
@@ -31,18 +32,9 @@
                             <action selector="switchBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KpA-4i-0UL"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈奕迅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBX-EK-bMW">
-                        <rect key="frame" x="47" y="5" width="208" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="18" id="1s5-XS-kIn"/>
-                            <constraint firstAttribute="width" constant="208" id="Fav-hV-ZVl"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerTips_topokSQ" translatesAutoresizingMaskIntoConstraints="NO" id="CmK-7Z-rRm">
                         <rect key="frame" x="67" y="27" width="14" height="8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="8" id="cTT-f3-Lg2"/>
                             <constraint firstAttribute="width" constant="14" id="p9a-US-ifu"/>
@@ -63,6 +55,7 @@
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="global_icon_hq_select" translatesAutoresizingMaskIntoConstraints="NO" id="QAv-Pf-g4o">
                         <rect key="frame" x="45" y="24" width="20" height="14"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="uQ0-pM-zhW"/>
                             <constraint firstAttribute="width" constant="20" id="uR3-Ou-qhu"/>
@@ -70,6 +63,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好久不见" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kv-aL-8WF">
                         <rect key="frame" x="87" y="22" width="150" height="17"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="iAo-Pv-1VC"/>
                             <constraint firstAttribute="width" constant="150" id="qN7-jW-DFg"/>
@@ -77,8 +71,21 @@
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈奕迅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBX-EK-bMW">
+                        <rect key="frame" x="47" y="5" width="208" height="18"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="1s5-XS-kIn"/>
+                            <constraint firstAttribute="width" constant="208" id="Fav-hV-ZVl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="0Kv-aL-8WF" firstAttribute="leading" secondItem="QAv-Pf-g4o" secondAttribute="trailing" constant="22" id="2Ly-c3-BsJ"/>
                     <constraint firstAttribute="trailing" secondItem="Dve-dr-qho" secondAttribute="trailing" constant="8" id="3EE-6U-9TZ"/>
@@ -106,6 +113,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="authorLabel" destination="bBX-EK-bMW" id="hJ6-be-cne"/>
                 <outlet property="iconImageView" destination="evH-QQ-ZqC" id="Fg5-HZ-Ygm"/>
@@ -114,7 +122,7 @@
                 <outlet property="switchBtn" destination="MML-XW-hkM" id="C0H-hE-CaK"/>
                 <outlet property="title2HQ" destination="2Ly-c3-BsJ" id="6vv-lg-k9L"/>
             </connections>
-            <point key="canvasLocation" x="351" y="348.5"/>
+            <point key="canvasLocation" x="351" y="348"/>
         </tableViewCell>
     </objects>
     <resources>

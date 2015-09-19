@@ -1,0 +1,897 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27EF65671BAD46CE00EDF09F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65661BAD46CE00EDF09F /* AppDelegate.swift */; };
+		27EF65711BAD46CE00EDF09F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EF656F1BAD46CE00EDF09F /* LaunchScreen.storyboard */; };
+		27EF657C1BAD46CE00EDF09F /* JingtingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF657B1BAD46CE00EDF09F /* JingtingTests.swift */; };
+		27EF65871BAD46CE00EDF09F /* JingtingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65861BAD46CE00EDF09F /* JingtingUITests.swift */; };
+		27EF65BB1BAD482400EDF09F /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF659C1BAD482400EDF09F /* TencentOpenAPI.framework */; settings = {ASSET_TAGS = (); }; };
+		27EF65BC1BAD482400EDF09F /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27EF659D1BAD482400EDF09F /* TencentOpenApi_IOS_Bundle.bundle */; settings = {ASSET_TAGS = (); }; };
+		27EF65BD1BAD482400EDF09F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF659F1BAD482400EDF09F /* libWeiboSDK.a */; settings = {ASSET_TAGS = (); }; };
+		27EF65BE1BAD482400EDF09F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65A71BAD482400EDF09F /* WeiboSDK.bundle */; settings = {ASSET_TAGS = (); }; };
+		27EF65BF1BAD482400EDF09F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65AB1BAD482400EDF09F /* libWeChatSDK.a */; settings = {ASSET_TAGS = (); }; };
+		27EF65C01BAD482400EDF09F /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65AE1BAD482400EDF09F /* MOBFoundation.framework */; settings = {ASSET_TAGS = (); }; };
+		27EF65C11BAD482400EDF09F /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65AF1BAD482400EDF09F /* ShareSDK.bundle */; settings = {ASSET_TAGS = (); }; };
+		27EF65C21BAD482400EDF09F /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65B01BAD482400EDF09F /* ShareSDK.framework */; settings = {ASSET_TAGS = (); }; };
+		27EF65C31BAD482400EDF09F /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65B11BAD482400EDF09F /* ShareSDKConnector.framework */; settings = {ASSET_TAGS = (); }; };
+		27EF65C41BAD482400EDF09F /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65B21BAD482400EDF09F /* ShareSDKExtension.framework */; settings = {ASSET_TAGS = (); }; };
+		27EF65C51BAD482400EDF09F /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65B31BAD482400EDF09F /* ShareSDKUI.bundle */; settings = {ASSET_TAGS = (); }; };
+		27EF65C61BAD482400EDF09F /* ShareSDKUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65B41BAD482400EDF09F /* ShareSDKUI.framework */; settings = {ASSET_TAGS = (); }; };
+		27EF65C71BAD482400EDF09F /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65B71BAD482400EDF09F /* SWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		27EF65C81BAD482400EDF09F /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65BA1BAD482400EDF09F /* YTKKeyValueStore.m */; settings = {ASSET_TAGS = (); }; };
+		27EF65CA1BAD499A00EDF09F /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65C91BAD499A00EDF09F /* libstdc++.tbd */; };
+		27EF65CC1BAD49AC00EDF09F /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65CB1BAD49AC00EDF09F /* libz.1.1.3.tbd */; };
+		27EF65CE1BAD4A0800EDF09F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF65CD1BAD4A0800EDF09F /* libicucore.tbd */; };
+		27EF65D01BAD4A4800EDF09F /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65CF1BAD4A4800EDF09F /* AppDelegateExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65D51BAD4A5600EDF09F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65D21BAD4A5600EDF09F /* Song.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65D61BAD4A5600EDF09F /* SongLrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65D31BAD4A5600EDF09F /* SongLrc.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65D71BAD4A5600EDF09F /* SongPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65D41BAD4A5600EDF09F /* SongPlay.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65DB1BAD4A6B00EDF09F /* JHBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65D91BAD4A6B00EDF09F /* JHBaseService.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65DC1BAD4A6B00EDF09F /* JHSongMP3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65DA1BAD4A6B00EDF09F /* JHSongMP3Service.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65E01BAD4A7800EDF09F /* JHMusicLyricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65DE1BAD4A7800EDF09F /* JHMusicLyricHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65E11BAD4A7800EDF09F /* JHShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65DF1BAD4A7800EDF09F /* JHShareHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65E91BAD4A8400EDF09F /* JHMusciListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65E31BAD4A8400EDF09F /* JHMusciListCell.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65EA1BAD4A8400EDF09F /* JHMusciListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65E41BAD4A8400EDF09F /* JHMusciListCell.xib */; settings = {ASSET_TAGS = (); }; };
+		27EF65EB1BAD4A8400EDF09F /* JHNativeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65E51BAD4A8400EDF09F /* JHNativeCell.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65EC1BAD4A8400EDF09F /* JHNativeSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65E61BAD4A8400EDF09F /* JHNativeSongView.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65ED1BAD4A8400EDF09F /* JHShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65E71BAD4A8400EDF09F /* JHShareView.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65EE1BAD4A8400EDF09F /* JHShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65E81BAD4A8400EDF09F /* JHShareView.xib */; settings = {ASSET_TAGS = (); }; };
+		27EF65F61BAD4A9100EDF09F /* JHListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65F01BAD4A9100EDF09F /* JHListController.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65F71BAD4A9100EDF09F /* JHListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65F11BAD4A9100EDF09F /* JHListController.xib */; settings = {ASSET_TAGS = (); }; };
+		27EF65F81BAD4A9100EDF09F /* JHMusicPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65F21BAD4A9100EDF09F /* JHMusicPlayController.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65F91BAD4A9100EDF09F /* JHMusicPlayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65F31BAD4A9100EDF09F /* JHMusicPlayController.xib */; settings = {ASSET_TAGS = (); }; };
+		27EF65FA1BAD4A9100EDF09F /* JHUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65F41BAD4A9100EDF09F /* JHUserController.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF65FB1BAD4A9100EDF09F /* JHUserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF65F51BAD4A9100EDF09F /* JHUserController.xib */; settings = {ASSET_TAGS = (); }; };
+		27EF65FF1BAD4AD000EDF09F /* JHAppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65FD1BAD4AD000EDF09F /* JHAppKey.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF66001BAD4AD000EDF09F /* JHMacros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF65FE1BAD4AD000EDF09F /* JHMacros.swift */; settings = {ASSET_TAGS = (); }; };
+		27EF66021BAD508700EDF09F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EF66011BAD508700EDF09F /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		2BA50E968D58C923351E23B2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44128005B5E44FAC9D0FC86F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27EF65781BAD46CE00EDF09F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27EF655B1BAD46CE00EDF09F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EF65621BAD46CE00EDF09F;
+			remoteInfo = Jingting;
+		};
+		27EF65831BAD46CE00EDF09F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27EF655B1BAD46CE00EDF09F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EF65621BAD46CE00EDF09F;
+			remoteInfo = Jingting;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27EF65631BAD46CE00EDF09F /* 静听.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "静听.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EF65661BAD46CE00EDF09F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27EF65701BAD46CE00EDF09F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27EF65721BAD46CE00EDF09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		27EF65771BAD46CE00EDF09F /* JingtingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JingtingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EF657B1BAD46CE00EDF09F /* JingtingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JingtingTests.swift; sourceTree = "<group>"; };
+		27EF657D1BAD46CE00EDF09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27EF65821BAD46CE00EDF09F /* JingtingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JingtingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EF65861BAD46CE00EDF09F /* JingtingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JingtingUITests.swift; sourceTree = "<group>"; };
+		27EF65881BAD46CE00EDF09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27EF65941BAD46E200EDF09F /* Jingting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jingting-Bridging-Header.h"; sourceTree = "<group>"; };
+		27EF659C1BAD482400EDF09F /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		27EF659D1BAD482400EDF09F /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		27EF659F1BAD482400EDF09F /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		27EF65A01BAD482400EDF09F /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		27EF65A11BAD482400EDF09F /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		27EF65A21BAD482400EDF09F /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		27EF65A31BAD482400EDF09F /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		27EF65A41BAD482400EDF09F /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		27EF65A51BAD482400EDF09F /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		27EF65A61BAD482400EDF09F /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		27EF65A71BAD482400EDF09F /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		27EF65A81BAD482400EDF09F /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		27EF65A91BAD482400EDF09F /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
+		27EF65AB1BAD482400EDF09F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		27EF65AC1BAD482400EDF09F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		27EF65AD1BAD482400EDF09F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		27EF65AE1BAD482400EDF09F /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		27EF65AF1BAD482400EDF09F /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
+		27EF65B01BAD482400EDF09F /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
+		27EF65B11BAD482400EDF09F /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		27EF65B21BAD482400EDF09F /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
+		27EF65B31BAD482400EDF09F /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
+		27EF65B41BAD482400EDF09F /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
+		27EF65B61BAD482400EDF09F /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		27EF65B71BAD482400EDF09F /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		27EF65B91BAD482400EDF09F /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		27EF65BA1BAD482400EDF09F /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		27EF65C91BAD499A00EDF09F /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		27EF65CB1BAD49AC00EDF09F /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		27EF65CD1BAD4A0800EDF09F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		27EF65CF1BAD4A4800EDF09F /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		27EF65D21BAD4A5600EDF09F /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		27EF65D31BAD4A5600EDF09F /* SongLrc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLrc.swift; sourceTree = "<group>"; };
+		27EF65D41BAD4A5600EDF09F /* SongPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongPlay.swift; sourceTree = "<group>"; };
+		27EF65D91BAD4A6B00EDF09F /* JHBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHBaseService.swift; sourceTree = "<group>"; };
+		27EF65DA1BAD4A6B00EDF09F /* JHSongMP3Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHSongMP3Service.swift; sourceTree = "<group>"; };
+		27EF65DE1BAD4A7800EDF09F /* JHMusicLyricHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusicLyricHelper.swift; sourceTree = "<group>"; };
+		27EF65DF1BAD4A7800EDF09F /* JHShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHShareHelper.swift; sourceTree = "<group>"; };
+		27EF65E31BAD4A8400EDF09F /* JHMusciListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusciListCell.swift; sourceTree = "<group>"; };
+		27EF65E41BAD4A8400EDF09F /* JHMusciListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHMusciListCell.xib; sourceTree = "<group>"; };
+		27EF65E51BAD4A8400EDF09F /* JHNativeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHNativeCell.swift; sourceTree = "<group>"; };
+		27EF65E61BAD4A8400EDF09F /* JHNativeSongView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHNativeSongView.swift; sourceTree = "<group>"; };
+		27EF65E71BAD4A8400EDF09F /* JHShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHShareView.swift; sourceTree = "<group>"; };
+		27EF65E81BAD4A8400EDF09F /* JHShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHShareView.xib; sourceTree = "<group>"; };
+		27EF65F01BAD4A9100EDF09F /* JHListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHListController.swift; sourceTree = "<group>"; };
+		27EF65F11BAD4A9100EDF09F /* JHListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHListController.xib; sourceTree = "<group>"; };
+		27EF65F21BAD4A9100EDF09F /* JHMusicPlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMusicPlayController.swift; sourceTree = "<group>"; };
+		27EF65F31BAD4A9100EDF09F /* JHMusicPlayController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHMusicPlayController.xib; sourceTree = "<group>"; };
+		27EF65F41BAD4A9100EDF09F /* JHUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHUserController.swift; sourceTree = "<group>"; };
+		27EF65F51BAD4A9100EDF09F /* JHUserController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHUserController.xib; sourceTree = "<group>"; };
+		27EF65FD1BAD4AD000EDF09F /* JHAppKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHAppKey.swift; sourceTree = "<group>"; };
+		27EF65FE1BAD4AD000EDF09F /* JHMacros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHMacros.swift; sourceTree = "<group>"; };
+		27EF66011BAD508700EDF09F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44128005B5E44FAC9D0FC86F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9448825BCC11BFC2C88134 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FD824083436BCDB7D1E7B727 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27EF65601BAD46CE00EDF09F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EF65CE1BAD4A0800EDF09F /* libicucore.tbd in Frameworks */,
+				27EF65CC1BAD49AC00EDF09F /* libz.1.1.3.tbd in Frameworks */,
+				27EF65CA1BAD499A00EDF09F /* libstdc++.tbd in Frameworks */,
+				2BA50E968D58C923351E23B2 /* Pods.framework in Frameworks */,
+				27EF65C61BAD482400EDF09F /* ShareSDKUI.framework in Frameworks */,
+				27EF65C41BAD482400EDF09F /* ShareSDKExtension.framework in Frameworks */,
+				27EF65BD1BAD482400EDF09F /* libWeiboSDK.a in Frameworks */,
+				27EF65C01BAD482400EDF09F /* MOBFoundation.framework in Frameworks */,
+				27EF65C31BAD482400EDF09F /* ShareSDKConnector.framework in Frameworks */,
+				27EF65C21BAD482400EDF09F /* ShareSDK.framework in Frameworks */,
+				27EF65BF1BAD482400EDF09F /* libWeChatSDK.a in Frameworks */,
+				27EF65BB1BAD482400EDF09F /* TencentOpenAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EF65741BAD46CE00EDF09F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EF657F1BAD46CE00EDF09F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27EF655A1BAD46CE00EDF09F = {
+			isa = PBXGroup;
+			children = (
+				27EF65651BAD46CE00EDF09F /* Jingting */,
+				27EF657A1BAD46CE00EDF09F /* JingtingTests */,
+				27EF65851BAD46CE00EDF09F /* JingtingUITests */,
+				27EF65641BAD46CE00EDF09F /* Products */,
+				FFA04FB0AFABDE4CA96848F2 /* Pods */,
+				EBF005BAA9A1ECC8CD3864D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27EF65641BAD46CE00EDF09F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65631BAD46CE00EDF09F /* 静听.app */,
+				27EF65771BAD46CE00EDF09F /* JingtingTests.xctest */,
+				27EF65821BAD46CE00EDF09F /* JingtingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27EF65651BAD46CE00EDF09F /* Jingting */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65661BAD46CE00EDF09F /* AppDelegate.swift */,
+				27EF65CF1BAD4A4800EDF09F /* AppDelegateExtension.swift */,
+				27EF65941BAD46E200EDF09F /* Jingting-Bridging-Header.h */,
+				27EF65D11BAD4A5600EDF09F /* Model */,
+				27EF65EF1BAD4A9100EDF09F /* Controller */,
+				27EF65D81BAD4A6B00EDF09F /* Server */,
+				27EF65DD1BAD4A7800EDF09F /* Utils */,
+				27EF65E21BAD4A8400EDF09F /* View */,
+				27EF65981BAD482400EDF09F /* OpenSource */,
+				27EF65FC1BAD4ABB00EDF09F /* Others */,
+			);
+			path = Jingting;
+			sourceTree = "<group>";
+		};
+		27EF657A1BAD46CE00EDF09F /* JingtingTests */ = {
+			isa = PBXGroup;
+			children = (
+				27EF657B1BAD46CE00EDF09F /* JingtingTests.swift */,
+				27EF657D1BAD46CE00EDF09F /* Info.plist */,
+			);
+			path = JingtingTests;
+			sourceTree = "<group>";
+		};
+		27EF65851BAD46CE00EDF09F /* JingtingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65861BAD46CE00EDF09F /* JingtingUITests.swift */,
+				27EF65881BAD46CE00EDF09F /* Info.plist */,
+			);
+			path = JingtingUITests;
+			sourceTree = "<group>";
+		};
+		27EF65981BAD482400EDF09F /* OpenSource */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65991BAD482400EDF09F /* libraries */,
+				27EF65B51BAD482400EDF09F /* SWTableViewCell */,
+				27EF65B81BAD482400EDF09F /* YTKKeyValueStore */,
+			);
+			path = OpenSource;
+			sourceTree = "<group>";
+		};
+		27EF65991BAD482400EDF09F /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				27EF659A1BAD482400EDF09F /* extends */,
+				27EF65AE1BAD482400EDF09F /* MOBFoundation.framework */,
+				27EF65AF1BAD482400EDF09F /* ShareSDK.bundle */,
+				27EF65B01BAD482400EDF09F /* ShareSDK.framework */,
+				27EF65B11BAD482400EDF09F /* ShareSDKConnector.framework */,
+				27EF65B21BAD482400EDF09F /* ShareSDKExtension.framework */,
+				27EF65B31BAD482400EDF09F /* ShareSDKUI.bundle */,
+				27EF65B41BAD482400EDF09F /* ShareSDKUI.framework */,
+			);
+			path = libraries;
+			sourceTree = "<group>";
+		};
+		27EF659A1BAD482400EDF09F /* extends */ = {
+			isa = PBXGroup;
+			children = (
+				27EF659B1BAD482400EDF09F /* QQSDK */,
+				27EF659E1BAD482400EDF09F /* SinaWeiboSDK */,
+				27EF65AA1BAD482400EDF09F /* WeChatSDK */,
+			);
+			path = extends;
+			sourceTree = "<group>";
+		};
+		27EF659B1BAD482400EDF09F /* QQSDK */ = {
+			isa = PBXGroup;
+			children = (
+				27EF659C1BAD482400EDF09F /* TencentOpenAPI.framework */,
+				27EF659D1BAD482400EDF09F /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = QQSDK;
+			sourceTree = "<group>";
+		};
+		27EF659E1BAD482400EDF09F /* SinaWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				27EF659F1BAD482400EDF09F /* libWeiboSDK.a */,
+				27EF65A01BAD482400EDF09F /* WBHttpRequest+WeiboShare.h */,
+				27EF65A11BAD482400EDF09F /* WBHttpRequest+WeiboToken.h */,
+				27EF65A21BAD482400EDF09F /* WBHttpRequest+WeiboUser.h */,
+				27EF65A31BAD482400EDF09F /* WBHttpRequest.h */,
+				27EF65A41BAD482400EDF09F /* WBSDKBasicButton.h */,
+				27EF65A51BAD482400EDF09F /* WBSDKCommentButton.h */,
+				27EF65A61BAD482400EDF09F /* WBSDKRelationshipButton.h */,
+				27EF65A71BAD482400EDF09F /* WeiboSDK.bundle */,
+				27EF65A81BAD482400EDF09F /* WeiboSDK.h */,
+				27EF65A91BAD482400EDF09F /* WeiboUser.h */,
+			);
+			path = SinaWeiboSDK;
+			sourceTree = "<group>";
+		};
+		27EF65AA1BAD482400EDF09F /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65AB1BAD482400EDF09F /* libWeChatSDK.a */,
+				27EF65AC1BAD482400EDF09F /* WXApi.h */,
+				27EF65AD1BAD482400EDF09F /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+		27EF65B51BAD482400EDF09F /* SWTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65B61BAD482400EDF09F /* SWTableViewCell.h */,
+				27EF65B71BAD482400EDF09F /* SWTableViewCell.m */,
+			);
+			path = SWTableViewCell;
+			sourceTree = "<group>";
+		};
+		27EF65B81BAD482400EDF09F /* YTKKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65B91BAD482400EDF09F /* YTKKeyValueStore.h */,
+				27EF65BA1BAD482400EDF09F /* YTKKeyValueStore.m */,
+			);
+			path = YTKKeyValueStore;
+			sourceTree = "<group>";
+		};
+		27EF65D11BAD4A5600EDF09F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65D21BAD4A5600EDF09F /* Song.swift */,
+				27EF65D31BAD4A5600EDF09F /* SongLrc.swift */,
+				27EF65D41BAD4A5600EDF09F /* SongPlay.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27EF65D81BAD4A6B00EDF09F /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65D91BAD4A6B00EDF09F /* JHBaseService.swift */,
+				27EF65DA1BAD4A6B00EDF09F /* JHSongMP3Service.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		27EF65DD1BAD4A7800EDF09F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65DE1BAD4A7800EDF09F /* JHMusicLyricHelper.swift */,
+				27EF65DF1BAD4A7800EDF09F /* JHShareHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		27EF65E21BAD4A8400EDF09F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65E31BAD4A8400EDF09F /* JHMusciListCell.swift */,
+				27EF65E41BAD4A8400EDF09F /* JHMusciListCell.xib */,
+				27EF65E51BAD4A8400EDF09F /* JHNativeCell.swift */,
+				27EF65E61BAD4A8400EDF09F /* JHNativeSongView.swift */,
+				27EF65E71BAD4A8400EDF09F /* JHShareView.swift */,
+				27EF65E81BAD4A8400EDF09F /* JHShareView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27EF65EF1BAD4A9100EDF09F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65F01BAD4A9100EDF09F /* JHListController.swift */,
+				27EF65F11BAD4A9100EDF09F /* JHListController.xib */,
+				27EF65F21BAD4A9100EDF09F /* JHMusicPlayController.swift */,
+				27EF65F31BAD4A9100EDF09F /* JHMusicPlayController.xib */,
+				27EF65F41BAD4A9100EDF09F /* JHUserController.swift */,
+				27EF65F51BAD4A9100EDF09F /* JHUserController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27EF65FC1BAD4ABB00EDF09F /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				27EF66011BAD508700EDF09F /* Assets.xcassets */,
+				27EF65721BAD46CE00EDF09F /* Info.plist */,
+				27EF656F1BAD46CE00EDF09F /* LaunchScreen.storyboard */,
+				27EF65FD1BAD4AD000EDF09F /* JHAppKey.swift */,
+				27EF65FE1BAD4AD000EDF09F /* JHMacros.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		EBF005BAA9A1ECC8CD3864D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27EF65CD1BAD4A0800EDF09F /* libicucore.tbd */,
+				27EF65CB1BAD49AC00EDF09F /* libz.1.1.3.tbd */,
+				27EF65C91BAD499A00EDF09F /* libstdc++.tbd */,
+				44128005B5E44FAC9D0FC86F /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFA04FB0AFABDE4CA96848F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE9448825BCC11BFC2C88134 /* Pods.debug.xcconfig */,
+				FD824083436BCDB7D1E7B727 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27EF65621BAD46CE00EDF09F /* Jingting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EF658B1BAD46CE00EDF09F /* Build configuration list for PBXNativeTarget "Jingting" */;
+			buildPhases = (
+				978DBE4BC1201DFE750CA646 /* Check Pods Manifest.lock */,
+				27EF655F1BAD46CE00EDF09F /* Sources */,
+				27EF65601BAD46CE00EDF09F /* Frameworks */,
+				27EF65611BAD46CE00EDF09F /* Resources */,
+				B7D3EDCE9E2A40B605247B26 /* Embed Pods Frameworks */,
+				8B334CE833355E1B66E50D15 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jingting;
+			productName = Jingting;
+			productReference = 27EF65631BAD46CE00EDF09F /* 静听.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27EF65761BAD46CE00EDF09F /* JingtingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EF658E1BAD46CE00EDF09F /* Build configuration list for PBXNativeTarget "JingtingTests" */;
+			buildPhases = (
+				27EF65731BAD46CE00EDF09F /* Sources */,
+				27EF65741BAD46CE00EDF09F /* Frameworks */,
+				27EF65751BAD46CE00EDF09F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27EF65791BAD46CE00EDF09F /* PBXTargetDependency */,
+			);
+			name = JingtingTests;
+			productName = JingtingTests;
+			productReference = 27EF65771BAD46CE00EDF09F /* JingtingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27EF65811BAD46CE00EDF09F /* JingtingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EF65911BAD46CE00EDF09F /* Build configuration list for PBXNativeTarget "JingtingUITests" */;
+			buildPhases = (
+				27EF657E1BAD46CE00EDF09F /* Sources */,
+				27EF657F1BAD46CE00EDF09F /* Frameworks */,
+				27EF65801BAD46CE00EDF09F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27EF65841BAD46CE00EDF09F /* PBXTargetDependency */,
+			);
+			name = JingtingUITests;
+			productName = JingtingUITests;
+			productReference = 27EF65821BAD46CE00EDF09F /* JingtingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27EF655B1BAD46CE00EDF09F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = changjianhong;
+				TargetAttributes = {
+					27EF65621BAD46CE00EDF09F = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					27EF65761BAD46CE00EDF09F = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 27EF65621BAD46CE00EDF09F;
+					};
+					27EF65811BAD46CE00EDF09F = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 27EF65621BAD46CE00EDF09F;
+					};
+				};
+			};
+			buildConfigurationList = 27EF655E1BAD46CE00EDF09F /* Build configuration list for PBXProject "Jingting" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27EF655A1BAD46CE00EDF09F;
+			productRefGroup = 27EF65641BAD46CE00EDF09F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27EF65621BAD46CE00EDF09F /* Jingting */,
+				27EF65761BAD46CE00EDF09F /* JingtingTests */,
+				27EF65811BAD46CE00EDF09F /* JingtingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27EF65611BAD46CE00EDF09F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EF65EE1BAD4A8400EDF09F /* JHShareView.xib in Resources */,
+				27EF65F91BAD4A9100EDF09F /* JHMusicPlayController.xib in Resources */,
+				27EF66021BAD508700EDF09F /* Assets.xcassets in Resources */,
+				27EF65BC1BAD482400EDF09F /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				27EF65C11BAD482400EDF09F /* ShareSDK.bundle in Resources */,
+				27EF65F71BAD4A9100EDF09F /* JHListController.xib in Resources */,
+				27EF65FB1BAD4A9100EDF09F /* JHUserController.xib in Resources */,
+				27EF65711BAD46CE00EDF09F /* LaunchScreen.storyboard in Resources */,
+				27EF65EA1BAD4A8400EDF09F /* JHMusciListCell.xib in Resources */,
+				27EF65C51BAD482400EDF09F /* ShareSDKUI.bundle in Resources */,
+				27EF65BE1BAD482400EDF09F /* WeiboSDK.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EF65751BAD46CE00EDF09F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EF65801BAD46CE00EDF09F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B334CE833355E1B66E50D15 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		978DBE4BC1201DFE750CA646 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D3EDCE9E2A40B605247B26 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27EF655F1BAD46CE00EDF09F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EF65F81BAD4A9100EDF09F /* JHMusicPlayController.swift in Sources */,
+				27EF65671BAD46CE00EDF09F /* AppDelegate.swift in Sources */,
+				27EF65DC1BAD4A6B00EDF09F /* JHSongMP3Service.swift in Sources */,
+				27EF65C81BAD482400EDF09F /* YTKKeyValueStore.m in Sources */,
+				27EF65F61BAD4A9100EDF09F /* JHListController.swift in Sources */,
+				27EF65E01BAD4A7800EDF09F /* JHMusicLyricHelper.swift in Sources */,
+				27EF65D61BAD4A5600EDF09F /* SongLrc.swift in Sources */,
+				27EF65D71BAD4A5600EDF09F /* SongPlay.swift in Sources */,
+				27EF66001BAD4AD000EDF09F /* JHMacros.swift in Sources */,
+				27EF65FA1BAD4A9100EDF09F /* JHUserController.swift in Sources */,
+				27EF65EC1BAD4A8400EDF09F /* JHNativeSongView.swift in Sources */,
+				27EF65EB1BAD4A8400EDF09F /* JHNativeCell.swift in Sources */,
+				27EF65DB1BAD4A6B00EDF09F /* JHBaseService.swift in Sources */,
+				27EF65E91BAD4A8400EDF09F /* JHMusciListCell.swift in Sources */,
+				27EF65FF1BAD4AD000EDF09F /* JHAppKey.swift in Sources */,
+				27EF65ED1BAD4A8400EDF09F /* JHShareView.swift in Sources */,
+				27EF65E11BAD4A7800EDF09F /* JHShareHelper.swift in Sources */,
+				27EF65D01BAD4A4800EDF09F /* AppDelegateExtension.swift in Sources */,
+				27EF65C71BAD482400EDF09F /* SWTableViewCell.m in Sources */,
+				27EF65D51BAD4A5600EDF09F /* Song.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EF65731BAD46CE00EDF09F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EF657C1BAD46CE00EDF09F /* JingtingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EF657E1BAD46CE00EDF09F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EF65871BAD46CE00EDF09F /* JingtingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27EF65791BAD46CE00EDF09F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27EF65621BAD46CE00EDF09F /* Jingting */;
+			targetProxy = 27EF65781BAD46CE00EDF09F /* PBXContainerItemProxy */;
+		};
+		27EF65841BAD46CE00EDF09F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27EF65621BAD46CE00EDF09F /* Jingting */;
+			targetProxy = 27EF65831BAD46CE00EDF09F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27EF656F1BAD46CE00EDF09F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27EF65701BAD46CE00EDF09F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27EF65891BAD46CE00EDF09F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27EF658A1BAD46CE00EDF09F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27EF658C1BAD46CE00EDF09F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE9448825BCC11BFC2C88134 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries/extends/QQSDK",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries",
+				);
+				INFOPLIST_FILE = Jingting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries/extends/SinaWeiboSDK",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries/extends/WeChatSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = changjianhong.Jingting;
+				PRODUCT_NAME = "静听";
+				SWIFT_OBJC_BRIDGING_HEADER = "Jingting/Jingting-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27EF658D1BAD46CE00EDF09F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD824083436BCDB7D1E7B727 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries/extends/QQSDK",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries",
+				);
+				INFOPLIST_FILE = Jingting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries/extends/SinaWeiboSDK",
+					"$(PROJECT_DIR)/Jingting/OpenSource/libraries/extends/WeChatSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = changjianhong.Jingting;
+				PRODUCT_NAME = "静听";
+				SWIFT_OBJC_BRIDGING_HEADER = "Jingting/Jingting-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		27EF658F1BAD46CE00EDF09F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JingtingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = changjianhong.JingtingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jingting.app/Jingting";
+			};
+			name = Debug;
+		};
+		27EF65901BAD46CE00EDF09F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JingtingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = changjianhong.JingtingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jingting.app/Jingting";
+			};
+			name = Release;
+		};
+		27EF65921BAD46CE00EDF09F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JingtingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = changjianhong.JingtingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Jingting;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		27EF65931BAD46CE00EDF09F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JingtingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = changjianhong.JingtingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Jingting;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27EF655E1BAD46CE00EDF09F /* Build configuration list for PBXProject "Jingting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EF65891BAD46CE00EDF09F /* Debug */,
+				27EF658A1BAD46CE00EDF09F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EF658B1BAD46CE00EDF09F /* Build configuration list for PBXNativeTarget "Jingting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EF658C1BAD46CE00EDF09F /* Debug */,
+				27EF658D1BAD46CE00EDF09F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EF658E1BAD46CE00EDF09F /* Build configuration list for PBXNativeTarget "JingtingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EF658F1BAD46CE00EDF09F /* Debug */,
+				27EF65901BAD46CE00EDF09F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EF65911BAD46CE00EDF09F /* Build configuration list for PBXNativeTarget "JingtingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EF65921BAD46CE00EDF09F /* Debug */,
+				27EF65931BAD46CE00EDF09F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27EF655B1BAD46CE00EDF09F /* Project object */;
+}

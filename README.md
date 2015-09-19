@@ -7,12 +7,19 @@
 1.首先所用的第三方库都要更新
 
 LiquidFloatingActionButton.git', :branch => 'swift-2.0'
+
 pod 'FMDB'
+
 pod 'pop', '~> 1.0'
+
 pod 'Alamofire', '~> 2.0'
+
 pod 'Kingfisher', '~> 1.5'
+
 pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit.git', :branch => 'swift-2.0'
+
 pod 'MJExtension'
+
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'xcode7'
 
 这些都是支持Swift2.0版的
@@ -20,12 +27,15 @@ pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branc
 2.iOS9都要面临的问题(ATS)
 
 iOS9引入了新特性App Transport Security (ATS)。
+
 新特性要求App内访问的网络必须使用HTTPS协议。
+
 但是现在公司的项目使用的是HTTP协议，使用私有加密方式保证数据安全。现在也不能马上改成HTTPS协议传输。
 
 解决办法：
 
 在Info.plist中添加NSAppTransportSecurity类型Dictionary。
+
 在NSAppTransportSecurity下添加NSAllowsArbitraryLoads类型Boolean,值设为YES
 
 3.Bitcode 
@@ -63,6 +73,7 @@ Command /bin/sh failed with exit code 23
 8.Swift2.0 对类型检查更为严格了，let var 分的很清，unused 要用_代替，好几百warning都是这个引起的，看着warning就蛋疼，改了很大一会才消除所有warning，有些方法也因此改变了：例如
 
 func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)  ==> Swift2.0
+
 func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent)    
 
 
